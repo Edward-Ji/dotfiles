@@ -1,3 +1,13 @@
+# >>> zsh customisations >>>
+# prompt format
+PROMPT='%(?.%F{green}√.%F{red}!%?)%f %B%3~%b %# '
+# automatically cd if command is the name of a directory
+setopt AUTO_CD
+# enable correction
+setopt CORRECT
+setopt CORRECT_ALL
+# <<< zsh customisations <<<
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/admin/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -22,3 +32,15 @@ export SDKMAN_DIR="/Users/admin/.sdkman"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 # <<< jenv initialization <<<
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+zstyle :compinstall filename '/Users/admin/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
