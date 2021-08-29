@@ -14,6 +14,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set laststatus=2
+set mouse=a
 
 set colorcolumn=100
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
