@@ -1,0 +1,1 @@
+setopt NULL_GLOB
