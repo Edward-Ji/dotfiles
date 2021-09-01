@@ -16,14 +16,13 @@ set incsearch
 set laststatus=2
 set mouse=a
 
-set colorcolumn=100
+set textwidth=80
+set colorcolumn=80
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
-set t_Co=256
-set background=light
-colorscheme PaperColor
-
-let g:airline_theme='papercolor'
+" Shortcut for switching between 2 and 4 space indentation
+" Accept parameter '/' or '*' which switch to 2 and 4 respectively
+:command -nargs=1 Chind %s;^\(\s\+\);\=repeat(' ', len(submatch(0))<args>2);g
 
 " vim-plug automated installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -45,6 +44,27 @@ Plug 'vim-airline/vim-airline'
 " This is the official theme repository for vim-airline
 Plug 'vim-airline/vim-airline-themes'
 
+" Syntax checking plugin
+" Plug 'scrooloose/syntastic'
+
 " Initialize plugin system
 call plug#end()
 
+" Use plugged paper color theme
+set t_Co=256
+set background=light
+colorscheme PaperColor
+
+" Set airline variables
+let g:airline_theme='papercolor'
+
+" Syntastics recommended settings
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+"
