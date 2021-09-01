@@ -1,15 +1,8 @@
 # >>> zsh customisations >>>
-# prompt end of line mark
-PROMPT_EOL_MARK='%F{7}«%f'
-# prompt format
-PROMPT='%B%3~%b %(?.%F{green}.%F{red})❯%f '
-
-# automatically cd if command is the name of a directory
-setopt AUTO_CD
-
-# enable correction
-setopt CORRECT
-setopt CORRECT_ALL
+for zsh_file in $HOME/.zsh/*.zsh
+do
+    source $zsh_file
+done
 # <<< zsh customisations <<<
 
 # >>> conda initialize >>>
@@ -39,7 +32,8 @@ eval "$(jenv init -)"
 
 # The following lines were added by compinstall
 
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} r:|[._-/]=** r:|=**' 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '/Users/admin/.zshrc'
 
 autoload -Uz compinit
