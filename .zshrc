@@ -1,8 +1,12 @@
 # >>> zsh customisations >>>
+# prompt end of line mark
+PROMPT_EOL_MARK='%F{7}«%f'
 # prompt format
-PROMPT='%(?.%F{green}√.%F{red}!%?)%f %B%3~%b %# '
+PROMPT='%B%3~%b %(?.%F{green}.%F{red})❯%f '
+
 # automatically cd if command is the name of a directory
 setopt AUTO_CD
+
 # enable correction
 setopt CORRECT
 setopt CORRECT_ALL
@@ -35,8 +39,6 @@ eval "$(jenv init -)"
 
 # The following lines were added by compinstall
 
-zstyle ':completion:*' completer _complete _ignored
-zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '/Users/admin/.zshrc'
 
