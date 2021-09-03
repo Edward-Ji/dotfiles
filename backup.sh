@@ -1,5 +1,3 @@
-#!/bin/bash
-
 ################################################################################
 # backup.sh                                                                    #
 # This script backs up specified files in the xdg config directory.            #
