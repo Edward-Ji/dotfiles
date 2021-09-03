@@ -7,6 +7,9 @@ alias lla='ls -la'
 # mkdir aliases
 alias mkdir='mkdir -pv'
 
+# grep alias auto color
+alias grep='grep --color'
+
 # suppress stdout and stderr
 alias -g NUL="> /dev/null 2>&1"
 
