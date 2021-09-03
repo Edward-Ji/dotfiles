@@ -35,5 +35,5 @@ echo "Adding backup script"
 git add backup.sh
 
 # Commit and push
-git commit -m "${1:-'Auto backup'}"
+git commit -m "${1:-Auto backup}"
 git push -u origin main
