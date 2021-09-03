@@ -1,6 +1,3 @@
-# ls command color environment variable
-export LSCOLORS='Gxfxbxdxcxegedabagacad'
-
 # zsh history environment variables
 export HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 export HISTSIZE=10000
