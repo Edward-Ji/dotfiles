@@ -20,10 +20,6 @@ set textwidth=80
 set colorcolumn=80
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
-" Shortcut for switching between 2 and 4 space indentation
-" Accept parameter '/' or '*' which switch to 2 and 4 respectively
-:command -nargs=1 Chind %s;^\(\s\+\);\=repeat(' ', len(submatch(0))<args>2);g
-
 " vim-plug automated installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
