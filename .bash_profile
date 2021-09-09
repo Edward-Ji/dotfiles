@@ -24,9 +24,9 @@ function precmd {
 
     if [[ ${exit_code} != 0 ]]
     then
-        PS1+="${red}❯${normal} "
+        PS1+="${red}\$${normal} "
     else
-        PS1+="${green}❯${normal} "
+        PS1+="${green}\$${normal} "
     fi
 }
 
