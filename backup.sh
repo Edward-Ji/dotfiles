@@ -8,16 +8,17 @@ files=".hushlogin .vimrc .vim/after/ftplugin .zsh .zshenv .zshrc"
 
 # Config directory (defauls to home directory)
 config_dir="${XDG_CONFIG_DIR:-$HOME}"
+echo "Backing up files $files in config dir $config_dir"
 
 # Copy and add all file
 for file in $files
 do
     if [[ -d "$config_dir/$file" ]]
     then
-        mkdir -p "./$file" && ln "$config_dir/$file/*" "./$file"
+        mkdir -p "./$file" && ln -fv "$config_dir/$file/"* "./$file"
     elif [[ -f "$config_dir/$file" ]]
     then
-        mkdir -p `dirname "$file"` && ln "$config_dir/$file" "./$file"
+        mkdir -p `dirname "$file"` && ln -fv "$config_dir/$file" "./$file"
     else
         echo "Missing file $config_dir/$file"
         break
@@ -27,5 +28,5 @@ done
 
 # Commit and push
 git add -A
-git commit -m "${1:-Auto backup}"
+git commit -m "${1:-'Auto backup'}"
 git push -u origin main
