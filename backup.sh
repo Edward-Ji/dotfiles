@@ -4,7 +4,9 @@
 ################################################################################
 
 # List of files/folders to backup
-files=".hushlogin .vimrc .vim/after/ftplugin .zsh .zshenv .zshrc"
+files=".vimrc .vim/after/ftplugin
+    .hushlogin .zsh .zshenv .zshrc
+    .bash_profile"
 
 # Config directory (defauls to home directory)
 config_dir="${XDG_CONFIG_DIR:-$HOME}"
