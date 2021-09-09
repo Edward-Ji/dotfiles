@@ -1,15 +1,16 @@
-# Supress the message that zsh is now default shell
+# Supress the lengthy message but indicate it's bash
 export BASH_SILENCE_DEPRECATION_WARNING=1
+echo "hello bash"
 
 # Pre-process prompt
 export PROMPT_COMMAND=precmd
 
 function precmd {
-    # get exit code
+    # Get exit code
     local exit_code="$?"
 
-    # working directory truncated to last three
-    local wd=`pwd | rev | cut -d / -f 1,2,3 | rev`
+    # Working directory truncated to last three
+    local wd=$(pwd | rev | cut -d / -f 1,2,3 | rev)
 
     # Font styles
     local bold=$(tput bold)
