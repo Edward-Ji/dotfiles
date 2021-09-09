@@ -20,10 +20,9 @@ do
     then
         mkdir -p `dirname "$file"` && ln -fv "$config_dir/$file" "./$file"
     else
-        echo "Missing file $config_dir/$file"
+        echo "Ignored file $config_dir/$file"
         break
     fi
-    git add "$file"
 done
 
 # Commit and push
