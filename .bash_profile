@@ -1,6 +1,5 @@
 # Supress the lengthy message but indicate it's bash
 export BASH_SILENCE_DEPRECATION_WARNING=1
-echo "hello bash"
 
 # Pre-process prompt
 export PROMPT_COMMAND=precmd
@@ -29,4 +28,7 @@ function precmd {
         PS1+="${green}\$${normal} "
     fi
 }
+
+# alias for executing zsh as login shell
+alias ezl='exec zsh --login'
 
