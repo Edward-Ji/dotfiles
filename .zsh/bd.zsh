@@ -1,6 +1,3 @@
-# Source https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh
-# Altered for my own use.
-
 function bd {
     # If no argument is provided go up one level
     if [[ -z "$1" ]]
@@ -57,13 +54,15 @@ function bd {
 
 # Get autocomplete options
 function _bd_comp {
-    # Get parents (in reverse order)
-    local level_max=${#${(ps:/:)${PWD}}}
-    local i
-    for i in {$level_max..2}
-    do
-        reply=($reply "`echo $PWD | cut -d'/' -f$i`")
-    done
-    reply=($reply "/")
+    # Use forward slash as seperator
+    local IFS=/
+    # Read parents as a raw string into an array
+    local parents
+    read -rA parents <<< $PWD
+    # Exclude current directory name
+    parents=('/' ${parents:0:-1})
+    # Set auto-complete reply to the max level and all parent names
+    reply=(${(Oa)parents})
 }
+
 compctl -V directories -K _bd_comp bd
