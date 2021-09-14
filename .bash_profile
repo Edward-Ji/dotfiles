@@ -29,6 +29,3 @@ function precmd {
     fi
 }
 
-# alias for executing zsh as login shell
-alias ezl='exec zsh --login'
-

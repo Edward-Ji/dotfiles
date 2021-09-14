@@ -13,6 +13,3 @@ alias grep='grep --color'
 # suppress stdout and stderr
 alias -g NUL='> /dev/null 2>&1'
 
-# execute bash as login shell
-alias ebl='exec bash --login'
-
