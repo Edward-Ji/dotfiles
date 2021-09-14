@@ -1,6 +1,5 @@
 # prompt end of line mark
 PROMPT_EOL_MARK='%F{7}\%f'
-
 # === prompt ===
 setopt PROMPT_SUBST
 

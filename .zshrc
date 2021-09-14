@@ -40,3 +40,5 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Add GPG key
+echo 'export GPG_TTY=$(tty)' >> ~/.zprofile
