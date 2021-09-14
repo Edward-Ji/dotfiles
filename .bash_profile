@@ -9,7 +9,7 @@ function precmd {
     local exit_code="$?"
 
     # Working directory truncated to last three
-    local wd=$(pwd | rev | cut -d / -f 1,2,3 | rev)
+    local wd=$(echo ${PWD/${HOME}/'~'} | rev | cut -d / -f 1-3 | rev)
 
     # Font styles
     local bold=$(tput bold)
@@ -19,7 +19,7 @@ function precmd {
     local green='\[\e[0;32m\]'
     local default='\[\e[0m\]'
 
-    PS1="${bold}${wd/${HOME}/~}${normal} "
+    PS1="${bold}${wd}${normal} "
 
     if [[ ${exit_code} != 0 ]]
     then
