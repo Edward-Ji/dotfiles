@@ -5,7 +5,7 @@
 
 # List of files/folders to backup
 files=".vimrc .vim/after/ftplugin
-    .hushlogin .zsh .zshenv .zshrc
+    .hushlogin .zsh .zshenv .zshrc .zprofile
     .bash_profile"
 
 # Config directory (defauls to home directory)
