@@ -1,5 +1,5 @@
 # ls colors
-export LSCOLORS='Gxfxbxdxcxegedhbhghchd'
+export LSCOLORS='Gxfxbxdxcxegedhbhgacad'
 
 # grep highlight color
 export GREPCOLOR='auto'
