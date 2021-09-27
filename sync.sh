@@ -1,6 +1,6 @@
 ################################################################################
-# backup.sh                                                                    #
-# This script backs up specified files in the xdg config directory.            #
+# sync.sh                                                                      #
+# This script syncs specified files in the xdg config directory.               #
 ################################################################################
 
 # List of files/folders to backup
@@ -27,7 +27,3 @@ do
     fi
 done
 
-# Commit and push
-git add -A
-git commit -m "${1:-'Auto backup'}"
-git push -u origin main
