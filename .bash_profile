@@ -4,7 +4,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Pre-process prompt
 export PROMPT_COMMAND=precmd
 
-function precmd {
+precmd() {
     # Get exit code
     local exit_code="$?"
 
@@ -12,8 +12,8 @@ function precmd {
     local wd=$(echo ${PWD/${HOME}/'~'} | rev | cut -d / -f 1-3 | rev)
 
     # Font styles
-    local bold=$(tput bold)
-    local normal=$(tput sgr0)
+    local bold="\[$(tput bold)\]"
+    local normal="\[$(tput sgr0)\]"
     # Font colors
     local red='\[\e[0;31m\]'
     local green='\[\e[0;32m\]'
