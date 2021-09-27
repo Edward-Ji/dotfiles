@@ -43,6 +43,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Syntax checking plugin
 Plug 'scrooloose/syntastic'
 
+" Premier Vim plugin for Git
+Plug 'tpope/vim-fugitive'
+
 " Initialize plugin system
 call plug#end()
 
