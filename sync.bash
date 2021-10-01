@@ -1,5 +1,5 @@
 ################################################################################
-# sync.sh                                                                      #
+# sync.bash                                                                    #
 # This script syncs specified files in the xdg config directory.               #
 ################################################################################
 
@@ -17,10 +17,14 @@ for file in $files
 do
     if [[ -d "$config_dir/$file" ]]
     then
-        mkdir -p "./$file" && ln -fv "$config_dir/$file/"* "./$file"
+        mkdir -p "./$file"
+        for rfile in $(ls $config_dir/$file)
+        do
+            ln -fv "$config_dir/$file/$rfile" "./$file"
+        done
     elif [[ -f "$config_dir/$file" ]]
     then
-        mkdir -p `dirname "$file"` && ln -fv "$config_dir/$file" "./$file"
+        mkdir -p $(dirname "$file") && ln -fv "$config_dir/$file" "./$file"
     else
         echo "Ignored file $config_dir/$file"
         break
