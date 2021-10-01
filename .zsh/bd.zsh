@@ -1,4 +1,4 @@
-function bd {
+bd() {
     # If at root directory do nothing
     if [[ $PWD = '/' ]]
     then
@@ -61,7 +61,7 @@ function bd {
 }
 
 # Get autocomplete options
-function _bd_comp {
+function _bd {
     # Use forward slash as seperator
     local IFS=/
     # Read parents as a raw string into an array
