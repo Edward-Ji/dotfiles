@@ -18,7 +18,7 @@ do
     if [[ -d "$config_dir/$file" ]]
     then
         mkdir -p "./$file"
-        for rfile in $(ls $config_dir/$file)
+        for rfile in $(ls -A $config_dir/$file)
         do
             ln -fv "$config_dir/$file/$rfile" "./$file"
         done
