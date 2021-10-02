@@ -1,10 +1,14 @@
-usage="$(basename "$0") [-i]
+usage="Usage: $(basename "$0") [-h] [-i]
     This script syncs specific files between the XDG config directory and this
     git repository. The XDG config directory if not set defaults to the home
     directory. The sync works by creating a hard links. The default mode is
     backup mode, which creates a hard link of files in the XDG config directory
-    in the git repository. The option -i specifies install mode, which works in
-    reverse."
+    in the git repository.
+
+Options:
+    -h  prints this usage message
+    -i  specifies install mode, which creates link in reverse to that of
+        backup mode"
 
 # List of files/folders to backup
 files=".vimrc .vim/after/ftplugin
@@ -12,14 +16,21 @@ files=".vimrc .vim/after/ftplugin
     .bash_profile"
 
 # Handle options
-while getopts i option
+while getopts ':hi' option
 do
     case $option in
+        h)
+            echo "$usage"
+            exit
+            ;;
         i)
             mode='i'
             ;;
         ?)
+            echo "Illegal option: -$OPTARG" >&2
+            echo "$usage" >&2
             exit 1
+            ;;
     esac
 done
 
