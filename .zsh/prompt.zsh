@@ -19,4 +19,4 @@ PROMPT+='${vcs_info_msg_0_:+"ᚠ $vcs_info_msg_0_ "}'
 PROMPT+='%(?.%F{green}.%F{red})❯%(!.❯.)%f '
 
 # right hand side prompt show hostname
-RPROMPT='%F{7}%m%f'
+RPROMPT='%F{7}%n@%m%f'
