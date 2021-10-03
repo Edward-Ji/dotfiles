@@ -58,19 +58,27 @@ fi
 # Copy and add all file
 for file in $files
 do
-    if [[ -d "$link_from/$file" ]]
+    if [[ "$link_from/$file" -ef "$link_to/$file" ]]
+    then
+        echo "Already linked file: $file"
+    elif [[ -d "$link_from/$file" ]]
     then
         mkdir -p "$link_to/$file"
         for rfile in $(ls -A $link_from/$file)
         do
-            ln -fv "$link_from/$file/$rfile" "$link_to/$file"
+            if [[ "$link_from/$file/$rfile" -ef "$link_to/$file/$rfile" ]]
+            then
+                echo "Already linked file: $file/$rfile"
+            else
+                ln -fv "$link_from/$file/$rfile" "$link_to/$file"
+            fi
         done
     elif [[ -f "$link_from/$file" ]]
     then
         mkdir -p "$link_to/$(dirname "$file")"
         ln -fv "$link_from/$file" "$link_to/$file"
     else
-        echo "Unknown file type $file"
+        echo "Invalid file type: $file"
         break
     fi
 done
