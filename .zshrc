@@ -1,9 +1,10 @@
-# >>> zsh customisations >>>
+####################
+# Load ZSH Plugins #
+####################
 for zsh_file in $HOME/.zsh/*.zsh
 do
     source $zsh_file
 done
-# <<< zsh customisations <<<
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
