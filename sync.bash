@@ -10,17 +10,6 @@ Options:
     -i  specifies install mode, which creates link in reverse to that of
         backup mode"
 
-# List of files/folders to backup
-if [[ -f 'include' ]]
-then
-    echo "Using include file"
-    files=$(cat 'include')
-else
-    files=".vimrc .vim/after/ftplugin
-        .hushlogin .zsh .zshenv .zshrc .zprofile
-        .bash_profile"
-fi
-
 # Handle options
 while getopts ':hi' option
 do
@@ -39,6 +28,17 @@ do
             ;;
     esac
 done
+
+# List of files/folders to backup
+if [[ -f 'include' ]]
+then
+    echo "Using include file"
+    files=$(cat 'include')
+else
+    files=".vimrc .vim/after/ftplugin
+        .hushlogin .zsh .zshenv .zshrc .zprofile
+        .bash_profile"
+fi
 
 # Config directory (defauls to home directory)
 config_dir="${XDG_CONFIG_DIR:-$HOME}"
