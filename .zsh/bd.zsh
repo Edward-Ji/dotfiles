@@ -73,4 +73,4 @@ function _bd {
     reply=($parents)
 }
 
-compctl -V names -K _bd_comp bd
+compctl -V names -K _bd bd
