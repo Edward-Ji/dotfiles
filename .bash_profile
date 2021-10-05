@@ -33,6 +33,6 @@ precmd() {
 
     rprompt="${USER}@${HOSTNAME:-$(hostname)}"
     local offsetcursor="\e[$((${COLUMNS} - ${#rprompt}))G"
-    printf "${savecursor}${offsetcursor}${gray}${rprompt}${reset}${restorecursor}"
+    PS1="\[${savecursor}${offsetcursor}${gray}${rprompt}${reset}${restorecursor}${PS1}\]"
 }
 
