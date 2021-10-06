@@ -46,6 +46,9 @@ Plug 'scrooloose/syntastic'
 " Premier Vim plugin for Git
 Plug 'tpope/vim-fugitive'
 
+" File system explorer
+Plug 'preservim/nerdtree'
+
 " Initialize plugin system
 call plug#end()
 
