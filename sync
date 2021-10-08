@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 usage="Usage: $(basename "$0") [-h] [-i]
     This script syncs specific files between the XDG config directory and this
     git repository. The XDG config directory if not set defaults to the home
