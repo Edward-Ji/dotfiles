@@ -31,29 +31,33 @@ do
     esac
 done
 
+# Config directory (defauls to home directory)
+config_dir="${XDG_CONFIG_DIR:-$HOME}"
+
+# Repository directory (the direcotry of this script)
+repo_dir=$(dirname "$0")
+include_file="$repo_dir/include"
+
 # List of files/folders to backup
-if [[ -f 'include' ]]
+if [[ -f $include_file ]]
 then
     echo "Using include file"
-    files=$(cat 'include')
+    files=$(cat $include_file)
 else
     files=".vimrc .vim/after/ftplugin
         .hushlogin .zsh .zshenv .zshrc .zprofile
         .bash_profile"
 fi
 
-# Config directory (defauls to home directory)
-config_dir="${XDG_CONFIG_DIR:-$HOME}"
-
 # Handle install mode
 if [[ $mode = 'i' ]]
 then
-    link_from="."
+    link_from="$repo_dir"
     link_to="$config_dir"
     echo "Installing files $files to config dir $config_dir"
 else
     link_from="$config_dir"
-    link_to="."
+    link_to="$repo_dir"
     echo "Backing up files $files in config dir $config_dir"
 fi
 
