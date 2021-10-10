@@ -84,8 +84,6 @@ do
         mkdir -p "$link_to/$(dirname "$file")"
         ln -fv "$link_from/$file" "$link_to/$file"
     else
-        echo "Invalid file type: $file"
-        break
+        echo "File not found: $file"
     fi
 done
-
