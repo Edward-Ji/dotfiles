@@ -6,13 +6,15 @@ vboxterm() {
     VBoxManage controlvm "$1" poweroff --type headless
 }
 
-_vboxvms() {
-    reply=($(VBoxManage list vms | grep -o "[[:alnum:]-]\+"))
+_vboxpoweredoffvms() {
+    all=("${(@f)$(VBoxManage list vms | grep -Eo '".+"' | tr -d '"')}")
+    run=("${(@f)$(VBoxManage list runningvms | grep -Eo '".+"' | tr -d '"')}")
+    reply=("${(@)all:|run}")
 }
 
 _vboxrunningvms() {
-    reply=($(VBoxManage list runningvms | grep -o "[[:alnum:]-]\+"))
+    reply=("${(@f)$(VBoxManage list runningvms | grep -Eo '".+"' | tr -d '"')}")
 }
 
-compctl -K _vboxvms vboxstart
+compctl -K _vboxpoweredoffvms vboxstart
 compctl -K _vboxrunningvms vboxterm
