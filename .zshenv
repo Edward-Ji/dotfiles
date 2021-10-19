@@ -8,3 +8,5 @@ export SAVEHIST=10000
 export EDITOR=vim
 export VISUAL=vim
 
+# set default bat theme
+export BAT_THEME="GitHub"
