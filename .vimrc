@@ -49,6 +49,9 @@ Plug 'tpope/vim-fugitive'
 " File system explorer
 Plug 'preservim/nerdtree'
 
+" Wakatime
+Plug 'wakatime/vim-wakatime'
+
 " Initialize plugin system
 call plug#end()
 
