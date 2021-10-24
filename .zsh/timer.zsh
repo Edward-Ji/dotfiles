@@ -10,15 +10,30 @@
 ################################################################################
 
 preexec_timer() {
-    timer=${timer:-$SECONDS}
+    _timer=${_timer:-$SECONDS}
 }
 
 precmd_timer() {
-    if [[ $timer ]]
+    if [[ $_timer ]]
     then
-        local elapsed=$(( $SECONDS - $timer ))
-        unset timer
-        [[ $elapsed -gt $TIMER_MINIMUM ]] && printf "⌚︎%ds\n" $elapsed
+        # Retrieve timer start
+        local -i elapsed=$(( $SECONDS - $_timer ))
+        unset _timer
+        [[ $elapsed -le $TIMER_MINIMUM ]] && return
+
+        # Convert to more readable time up to days
+        local -i seconds=$(( $elapsed % 60 ))
+        local -i minutes=$(( $elapsed / 60 % 60 ))
+        local -i hours=$(( $elapsed / 60 / 60 % 24 ))
+        local -i days=$(( $elapsed / 60 / 60 / 24 ))
+
+        # Display the execution time
+        printf "⌚︎"
+        [[ $days -gt 0 ]] && printf "%dd " $days
+        [[ $hours -gt 0 ]] && printf "%dh " $hours
+        [[ $minutes -gt 0 ]] && printf "%dm " $minutes
+        [[ $seconds -gt 0 ]] && printf "%ds" $seconds
+        printf "\n"
     fi
 }
 
