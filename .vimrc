@@ -73,6 +73,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_quiet_messages = {
+        \ "regex":   '\m\[missing-.*-docstring\]' }
+
 " Run PlugUpdate every week automatically when entering Vim.
 " https://gist.github.com/kkoomen/68319b08ab843ce67cf7b282b0b2fd24
 function! OnVimEnter() abort
