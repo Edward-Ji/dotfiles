@@ -1,0 +1,11 @@
+# Backups
+*~
+
+# macOS configurations
+.DS_Store
+
+# Visual Studio Code configurations
+.vs_code
+
+# JetBrains IDE configurations
+.idea

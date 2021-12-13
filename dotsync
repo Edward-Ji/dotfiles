@@ -46,7 +46,8 @@ then
 else
     files=".vimrc .vim/after/ftplugin
         .hushlogin .zsh .zshenv .zshrc .zprofile
-        .bash_profile"
+        .bash_profile
+        .gitignore_global"
 fi
 
 # Handle install mode
