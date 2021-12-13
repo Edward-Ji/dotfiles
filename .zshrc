@@ -31,6 +31,12 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 # <<< jenv initialization <<<
 
+# homebrew auto-complete
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _approximate
