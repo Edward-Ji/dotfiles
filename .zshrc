@@ -27,8 +27,10 @@ export SDKMAN_DIR="/Users/admin/.sdkman"
 # <<< sdkman initialization <<<
 
 # >>> jenv initialization >>>
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+if [[ jenv --version ]] then
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+fi
 # <<< jenv initialization <<<
 
 # homebrew auto-complete
