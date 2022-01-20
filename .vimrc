@@ -23,8 +23,8 @@ highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 " vim-plug automated installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Specify a directory for plugins
@@ -74,7 +74,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_quiet_messages = {
-        \ "regex":   '\m\[missing-.*-docstring\]' }
+            \ "regex":   '\m\[missing-.*-docstring\]' }
 
 " NERDTree options and shortcuts
 let g:NERDTreeIgnore = ['^__']
@@ -92,20 +92,22 @@ noremap <C-h> <C-w>h
 
 " Run PlugUpdate every week automatically when entering Vim.
 " https://gist.github.com/kkoomen/68319b08ab843ce67cf7b282b0b2fd24
-function! OnVimEnter() abort
-  if exists('g:plug_home')
-    let l:filename = printf('%s/.vim_plug_update', g:plug_home)
-    if filereadable(l:filename) == 0
-      call writefile([], l:filename)
-    endif
+function! PlugUpdate() abort
+    if exists('g:plug_home')
+        let l:filename = printf('%s/.vim_plug_update', g:plug_home)
+        if filereadable(l:filename) == 0
+            call writefile([], l:filename)
+        endif
 
-    let l:this_week = strftime('%Y_%V')
-    let l:contents = readfile(l:filename)
-    if index(l:contents, l:this_week) < 0
-      call execute('PlugUpdate')
-      call writefile([l:this_week], l:filename, 'a')
+        let l:this_week = strftime('%Y_%V')
+        let l:contents = readfile(l:filename)
+        if index(l:contents, l:this_week) < 0
+            call execute('PlugUpdate')
+            call writefile([l:this_week], l:filename, 'a')
+        endif
     endif
-  endif
 endfunction
 
-autocmd VimEnter * call OnVimEnter()
+    endif
+endfunction
+
