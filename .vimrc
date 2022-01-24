@@ -123,7 +123,13 @@ function! LoadSession()
 endfunction
 
 function! SaveSession()
-    let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+    " Close NERDTree in all tabs
+    let s:nerdtree_globally_active = 0
+    let l:current_tab = tabpagenr()
+    tabdo silent NERDTreeClose
+    exe 'tabn ' . l:current_tab
+
+    let b:sessiondir = $HOME . '/.vim/sessions' . getcwd()
     if (filewritable(b:sessiondir) != 2)
         exe 'silent !mkdir -p ' b:sessiondir
         redraw!
