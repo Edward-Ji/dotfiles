@@ -15,6 +15,8 @@ set undofile
 set incsearch
 set laststatus=2
 set mouse=a
+set foldmethod=syntax
+set foldlevelstart=99
 
 set textwidth=80
 set colorcolumn=80
@@ -46,8 +48,14 @@ Plug 'scrooloose/syntastic'
 " Premier Vim plugin for Git
 Plug 'tpope/vim-fugitive'
 
+" Git diff in sign column
+Plug 'airblade/vim-gitgutter'
+
 " File system explorer
 Plug 'preservim/nerdtree'
+
+" Comment functions so powerful—no comment necessary
+Plug 'scrooloose/nerdcommenter'
 
 " Wakatime
 Plug 'wakatime/vim-wakatime'
@@ -82,6 +90,9 @@ let g:NERDTreeIgnore = ['^__']
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" NERDCommenter options
+let g:NERDSpaceDelims = 1
 
 " Switch window by direction shortcuts
 noremap <C-j> <C-w>j
