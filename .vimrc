@@ -25,7 +25,8 @@ highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 " vim-plug automated installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    silent execute '!curl -fLo ' . data_dir . '/autoload/plug.vim --create-dirs'
+            \ . 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -81,8 +82,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_quiet_messages = {
-            \ 'regex':   '\m\[missing-.*-docstring\]' }
+let g:syntastic_quiet_messages = { 'regex': '\m\[missing-.*-docstring\]' }
 
 " NERDTree options and shortcuts
 let g:NERDTreeIgnore = ['^__']
