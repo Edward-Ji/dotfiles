@@ -17,6 +17,7 @@ set laststatus=2
 set mouse=a
 set foldmethod=syntax
 set foldlevelstart=99
+set updatetime=100
 
 set textwidth=80
 set colorcolumn=80
