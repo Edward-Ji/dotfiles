@@ -94,6 +94,11 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 
 " NERDCommenter options
 let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDToggleCheckAllLines = 1
+let g:NERDAltDelims_c = 1
+let g:NERDAltDelims_python = 1
 
 " Switch window by direction shortcuts
 noremap <C-j> <C-w>j
