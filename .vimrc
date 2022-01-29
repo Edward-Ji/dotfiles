@@ -3,6 +3,7 @@ syntax on
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set backspace=2
 set expandtab
 set smartindent
 set nu
@@ -58,6 +59,9 @@ Plug 'preservim/nerdtree'
 
 " Comment functions so powerful—no comment necessary
 Plug 'scrooloose/nerdcommenter'
+
+" Fast, as-you-type, fuzzy-search code completion, comprehension and refactoring
+Plug 'ycm-core/YouCompleteMe'
 
 " Wakatime
 Plug 'wakatime/vim-wakatime'
