@@ -69,6 +69,9 @@ Plug 'jiangmiao/auto-pairs'
 " Wakatime
 Plug 'wakatime/vim-wakatime'
 
+" Viewing vim and nvim startup event timing information
+Plug 'dstein64/vim-startuptime'
+
 " Initialize plugin system
 call plug#end()
 
