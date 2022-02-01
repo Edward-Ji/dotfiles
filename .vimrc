@@ -63,6 +63,9 @@ Plug 'scrooloose/nerdcommenter'
 " Fast, as-you-type, fuzzy-search code completion, comprehension and refactoring
 Plug 'ycm-core/YouCompleteMe'
 
+" Insert or delete brackets, parens, quotes in pair.
+Plug 'jiangmiao/auto-pairs'
+
 " Wakatime
 Plug 'wakatime/vim-wakatime'
 
