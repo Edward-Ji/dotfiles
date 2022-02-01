@@ -58,7 +58,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 
 " Comment functions so powerful—no comment necessary
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 
 " Fast, as-you-type, fuzzy-search code completion, comprehension and refactoring
 Plug 'ycm-core/YouCompleteMe'
