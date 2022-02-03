@@ -80,8 +80,15 @@ set t_Co=256
 set background=light
 colorscheme PaperColor
 
-" Set airline variables
+" Set airline options
 let g:airline_theme='papercolor'
+
+function! MyLineNumber()
+  return substitute(line('.'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g') . ' | '
+     \ . substitute(line('$'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g')
+endfunction
+call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
+let g:airline_section_z = airline#section#create(['%3p%%: ', 'linenr', ':%3v'])
 
 " Syntastics recommended settings
 set statusline+=%#warningmsg#
