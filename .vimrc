@@ -19,7 +19,8 @@ set mouse=a           " all modes
 set foldmethod=syntax
 set foldlevelstart=99 " no folds closed
 set updatetime=100    " unit: ms
-set completeopt=popup,menuone
+set completeopt=      " do not show complete option preview
+set termwinsize=12*0 " terminal min height and width
 
 set textwidth=80
 set colorcolumn=80
@@ -117,6 +118,10 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDToggleCheckAllLines = 1
 let g:NERDAltDelims_c = 1
 let g:NERDAltDelims_python = 1
+
+" YouCompleteMe options
+let g:ycm_always_populate_location_list = 1
+let g:ycm_update_diagnostics_in_insert = 0
 
 " Switch window by direction shortcuts
 noremap <C-j> <C-w>j
