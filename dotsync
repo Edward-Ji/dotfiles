@@ -39,16 +39,20 @@ repo_dir=$(dirname "$0")
 include_file="$repo_dir/include"
 
 # List of files/folders to backup
-if [[ -f $include_file ]]
+if [[ ! -r $include_file ]]
 then
-    echo "Using include file"
-    files=$(cat $include_file)
-else
-    files=".vimrc .vim/after/ftplugin
-        .hushlogin .zsh .zshenv .zshrc .zprofile
-        .bash_profile
-        .gitignore_global"
+    echo "Missing include file" >&2
+    read -p "Generate include file using sample and continue? [Y/n]" -n 1 ans
+    case $ans in
+        [Nn])
+            exit;;
+        *)
+            cp sample_include include
+            echo "Copied sample include file"
+            ;;
+    esac
 fi
+files=$(cat $include_file)
 
 # Handle install mode
 if [[ $mode = 'i' ]]
