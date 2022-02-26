@@ -8,7 +8,7 @@ done
 
 fpath=(~/.zsh $fpath)
 
-plug_manager "esc/conda-zsh-completion"
+plug_manager "esc/conda-zsh-completion" "zsh-users/zsh-autosuggestions"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
