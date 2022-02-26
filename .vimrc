@@ -148,36 +148,3 @@ function! PlugUpdate() abort
 endfunction
 
 autocmd VimEnter * call PlugUpdate()
-
-" Restore directory session
-function! LoadSession()
-    let b:sessiondir = $HOME . '/.vim/sessions' . getcwd()
-    let b:sessionfile = b:sessiondir . '/session.vim'
-    if (filereadable(b:sessionfile))
-        exe 'source ' b:sessionfile
-        echo 'Restored from last session.'
-    else
-        echo 'No session loaded.'
-    endif
-endfunction
-
-function! SaveSession()
-    " Close NERDTree in all tabs
-    let s:nerdtree_globally_active = 0
-    let l:current_tab = tabpagenr()
-    tabdo silent NERDTreeClose
-    exe 'tabn ' . l:current_tab
-
-    let b:sessiondir = $HOME . '/.vim/sessions' . getcwd()
-    if (filewritable(b:sessiondir) != 2)
-        exe 'silent !mkdir -p ' b:sessiondir
-        redraw!
-    endif
-    let b:sessionfile = b:sessiondir . '/session.vim'
-    exe 'mksession! ' . b:sessionfile
-endfunction
-
-if (argc() == 0)
-    autocmd VimEnter * call LoadSession()
-    autocmd VimLeave * call SaveSession()
-endif
