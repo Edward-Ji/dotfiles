@@ -6,7 +6,8 @@ do
     source $zsh_file
 done
 
-plug_manager "esc/conda-zsh-completion" "zsh-users/zsh-autosuggestions"
+plug_manager "esc/conda-zsh-completion" "zsh-users/zsh-autosuggestions" \
+    "agkozak/zsh-z"
 
 # Zsh autosuggestions configurations
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
