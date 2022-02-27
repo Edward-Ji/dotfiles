@@ -6,9 +6,10 @@ do
     source $zsh_file
 done
 
-fpath=(~/.zsh $fpath)
-
 plug_manager "esc/conda-zsh-completion" "zsh-users/zsh-autosuggestions"
+
+# Zsh autosuggestions configurations
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -53,4 +54,3 @@ zstyle :compinstall filename '/Users/admin/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
