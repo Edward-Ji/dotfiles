@@ -11,7 +11,7 @@ alias mkdir='mkdir -pv'
 alias grep='grep --color'
 
 # suppress stdout and stderr
-alias -g NUL='> /dev/null 2>&1'
+alias -g NUL='&> /dev/null'
 alias -g OUTNUL='> /dev/null'
 alias -g ERRNUL='2> /dev/null'
 
