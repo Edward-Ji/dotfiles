@@ -6,11 +6,7 @@ do
     source $zsh_file
 done
 
-plug_manager "esc/conda-zsh-completion" "zsh-users/zsh-autosuggestions" \
-    "agkozak/zsh-z"
-
-# Zsh autosuggestions configurations
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
+plug_manager "esc/conda-zsh-completion" "agkozak/zsh-z"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
