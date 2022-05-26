@@ -1,8 +1,8 @@
 # ls aliases
 alias ls='ls -G'
 alias la='ls -a'
-alias ll='ls -l'
-alias lla='ls -la'
+alias ll='ls -hl'
+alias lla='ls -hla'
 
 # mkdir aliases
 alias mkdir='mkdir -pv'
