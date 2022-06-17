@@ -36,3 +36,4 @@ precmd() {
     printf "${savecursor}${offsetcursor}${gray}${rprompt}${reset}${restorecursor}"
 }
 
+. "$HOME/.cargo/env"
