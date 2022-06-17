@@ -10,3 +10,4 @@ export VISUAL=vim
 
 # set default bat theme
 export BAT_THEME="GitHub"
+. "$HOME/.cargo/env"
