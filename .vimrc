@@ -73,6 +73,9 @@ Plug 'wakatime/vim-wakatime'
 " Viewing vim and nvim startup event timing information
 Plug 'dstein64/vim-startuptime'
 
+" A powerful grammar checker
+Plug 'rhysd/vim-grammarous'
+
 " Initialize plugin system
 call plug#end()
 
