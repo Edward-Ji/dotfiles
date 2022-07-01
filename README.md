@@ -4,7 +4,14 @@ Personal dotfile backup
 ## Dotsync
 
 To sync dot files to repository, use `./dotsync`.
+
 To install repository dot files, use `./dotsync -i`.
+
+> **Warning**
+> 
+> The `./dotsync` script will **overwrite** your existing configurations.
+> 
+> You need to backup manually if you don't want to lose them.
 
 ## Zsh/Bash configurations
 
