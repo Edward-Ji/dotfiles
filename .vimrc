@@ -107,7 +107,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { 'regex': '\m\[missing-.*-docstring\]' }
 
 " NERDTree options and shortcuts
-let g:NERDTreeIgnore = ['^__']
+let g:NERDTreeIgnore = ['__pycache__']
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
