@@ -9,3 +9,7 @@
 
 # JetBrains IDE configurations
 .idea
+
+# Vim session files
+Session.vim
+Sessionx.vim
