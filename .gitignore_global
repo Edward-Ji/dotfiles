@@ -13,3 +13,6 @@
 # Vim session files
 Session.vim
 Sessionx.vim
+
+# jenv
+.java-version
