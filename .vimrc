@@ -25,6 +25,8 @@ set textwidth=80
 set colorcolumn=80
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
+runtime ftplugin/man.vim
+
 " vim-plug automated installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
