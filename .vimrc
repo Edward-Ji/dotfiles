@@ -48,9 +48,6 @@ Plug 'vim-airline/vim-airline'
 " This is the official theme repository for vim-airline
 Plug 'vim-airline/vim-airline-themes'
 
-" Syntax checking plugin
-Plug 'scrooloose/syntastic'
-
 " Premier Vim plugin for Git
 Plug 'tpope/vim-fugitive'
 
@@ -98,19 +95,6 @@ function! MyLineNumber()
 endfunction
 call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
 let g:airline_section_z = airline#section#create(['%3p%%: ', 'linenr', ':%3v'])
-
-" Syntastics recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_java_checkers = []
-
-let g:syntastic_quiet_messages = { 'regex': '\m\[missing-.*-docstring\]' }
 
 " NERDTree options and shortcuts
 let g:NERDTreeIgnore = ['__pycache__']
