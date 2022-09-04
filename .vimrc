@@ -113,7 +113,10 @@ let g:NERDAltDelims_python = 1
 
 " YouCompleteMe options
 let g:ycm_always_populate_location_list = 1
+let g:ycm_auto_hover = ''
 let g:ycm_update_diagnostics_in_insert = 0
+
+nmap <leader>D <plug>(YCMHover)
 
 " Switch window by direction shortcuts
 noremap <C-j> <C-w>j
