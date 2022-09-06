@@ -1,0 +1,23 @@
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+background-color='rgb(238,238,238)'
+bold-color='rgb(6,95,135)'
+bold-color-same-as-fg=false
+bold-is-bright=false
+cursor-background-color='rgb(118,214,255)'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='rgb(0,0,0)'
+default-size-columns=129
+default-size-rows=37
+font='Monospace 14'
+foreground-color='rgb(0,0,0)'
+highlight-background-color='rgb(192,192,192)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(0,0,0)'
+use-custom-command=false
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=true
+use-transparent-background=false
+visible-name='PaperColor'
