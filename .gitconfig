@@ -40,3 +40,7 @@
 	autoSetupRemote = true
 [includeIf "hasconfig:remote.*.url:git@github.sydney.edu.au:*/**"]
 	path = ~/.gitconfig-uni
+[pull]
+	rebase = true
+[fetch]
+	prune = true
