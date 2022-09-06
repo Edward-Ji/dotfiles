@@ -118,12 +118,6 @@ let g:ycm_update_diagnostics_in_insert = 0
 
 nmap <leader>D <plug>(YCMHover)
 
-" Switch window by direction shortcuts
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
-
 " Run PlugUpdate every week automatically when entering Vim.
 " https://gist.github.com/kkoomen/68319b08ab843ce67cf7b282b0b2fd24
 function! PlugUpdate() abort
