@@ -118,6 +118,12 @@ let g:ycm_update_diagnostics_in_insert = 0
 
 nmap <leader>D <plug>(YCMHover)
 
+" Enable wrap in quick fix
+augroup QuickFixWrap
+    autocmd!
+    autocmd FileType qf setlocal wrap
+augroup END
+
 " Run PlugUpdate every week automatically when entering Vim.
 " https://gist.github.com/kkoomen/68319b08ab843ce67cf7b282b0b2fd24
 function! PlugUpdate() abort
