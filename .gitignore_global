@@ -2,7 +2,7 @@
 *~
 
 # macOS configurations
-.DS_Store
+**/.DS_Store
 
 # Visual Studio Code configurations
 .vs_code
