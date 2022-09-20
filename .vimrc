@@ -69,12 +69,6 @@ Plug 'cohama/lexima.vim'
 " Wakatime
 Plug 'wakatime/vim-wakatime'
 
-" Viewing vim and nvim startup event timing information
-Plug 'dstein64/vim-startuptime'
-
-" A powerful grammar checker
-Plug 'rhysd/vim-grammarous'
-
 " Modifies Vim’s indentation behavior to comply with PEP8
 Plug 'Vimjas/vim-python-pep8-indent'
 
