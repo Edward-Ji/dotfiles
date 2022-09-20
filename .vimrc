@@ -108,15 +108,23 @@ let g:NERDAltDelims_python = 1
 " YouCompleteMe options
 let g:ycm_always_populate_location_list = 1
 let g:ycm_auto_hover = ''
+let g:ycm_key_invoke_completion = '<A-Space>'
+let g:ycm_show_detailed_diag_in_popup = 1
 let g:ycm_update_diagnostics_in_insert = 0
 
 nmap <leader>D <plug>(YCMHover)
 
-" Enable wrap in quick fix
-augroup QuickFixWrap
-    autocmd!
-    autocmd FileType qf setlocal wrap
-augroup END
+function! s:CustomizeYcmLocationWindow()
+    setlocal wrap
+endfunction
+
+autocmd User YcmLocationOpened call s:CustomizeYcmLocationWindow()
+
+function! s:CustomizeYcmQuickFixWindow()
+    setlocal wrap
+endfunction
+
+autocmd User YcmQuickFixOpened call s:CustomizeYcmQuickFixWindow()
 
 " Run PlugUpdate every week automatically when entering Vim.
 " https://gist.github.com/kkoomen/68319b08ab843ce67cf7b282b0b2fd24
