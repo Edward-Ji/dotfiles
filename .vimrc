@@ -20,6 +20,7 @@ set foldmethod=syntax
 set foldlevelstart=99 " no folds closed
 set updatetime=100    " unit: ms
 set completeopt=      " do not show complete option preview
+set splitright
 
 set textwidth=80
 set colorcolumn=80
