@@ -19,7 +19,7 @@ set mouse=a           " all modes
 set foldmethod=syntax
 set foldlevelstart=99 " no folds closed
 set updatetime=100    " unit: ms
-set completeopt=      " do not show complete option preview
+set completeopt=menuone,popup
 set splitright
 
 set textwidth=80
