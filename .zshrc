@@ -51,3 +51,6 @@ zstyle :compinstall filename '/Users/admin/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
