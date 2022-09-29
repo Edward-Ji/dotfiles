@@ -53,6 +53,7 @@
     "telnet"
   ],
   "Scrollback Lines" : 0,
+  "Scrollback in Alternate Screen" : false,
   "Status Bar Layout" : {
     "components" : [
       {
