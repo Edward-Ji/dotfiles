@@ -52,6 +52,7 @@
     "slogin",
     "telnet"
   ],
+  "Scrollback With Status Bar" : true,
   "Scrollback Lines" : 0,
   "Scrollback in Alternate Screen" : false,
   "Status Bar Layout" : {
