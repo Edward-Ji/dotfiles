@@ -1,3 +1,4 @@
+.inputrc
 .vimrc .vim/after/ftplugin
 .config/nvim/init.vim
 .hushlogin .zsh .zshenv .zshrc .zprofile
