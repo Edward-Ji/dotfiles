@@ -69,6 +69,9 @@ Plug 'preservim/nerdcommenter'
 " Fast, as-you-type, fuzzy-search code completion, comprehension and refactoring
 Plug 'ycm-core/YouCompleteMe'
 
+" Linting (syntax checking and semantic errors)
+Plug 'dense-analysis/ale'
+
 " Auto close parentheses and repeat by dot dot dot...
 Plug 'cohama/lexima.vim'
 
