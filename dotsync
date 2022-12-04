@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-usage="Usage: $(basename "$0") [-h] [-i]
+usage="Usage: $(basename "$0") [-h] [-i] [-v]
     This script syncs specific files between the XDG config directory and this
     git repository. The XDG config directory if not set defaults to the home
     directory. The sync works by creating a hard links. The default mode is
@@ -10,10 +10,14 @@ usage="Usage: $(basename "$0") [-h] [-i]
 Options:
     -h  prints this usage message
     -i  specifies install mode, which creates link in reverse to that of
-        backup mode"
+        backup mode
+    -v  specifies verbose mode, which shows every step"
+
+declare mode
+declare -i verbosity=0
 
 # Handle options
-while getopts ':hi' option
+while getopts ':hiv' option
 do
     case $option in
         h)
@@ -22,6 +26,9 @@ do
             ;;
         i)
             mode='i'
+            ;;
+        v)
+            verbosity=1;
             ;;
         ?)
             echo "Illegal option: -$OPTARG" >&2
@@ -38,6 +45,12 @@ config_dir="${XDG_CONFIG_DIR:-$HOME}"
 repo_dir=$(dirname "$0")
 include_file="$repo_dir/include"
 
+wisper() {
+    if [[ $verbosity -ne 0 ]]; then
+        echo "$@"
+    fi
+}
+
 # List of files/folders to backup
 if [[ ! -r $include_file ]]
 then
@@ -48,7 +61,7 @@ then
             exit;;
         *)
             cp sample_include include
-            echo "Copied sample include file"
+            wisper "Copied sample include file"
             ;;
     esac
 fi
@@ -59,11 +72,11 @@ if [[ $mode = 'i' ]]
 then
     link_from="$repo_dir"
     link_to="$config_dir"
-    echo "Installing files $files to config dir $config_dir"
+    wisper "Installing files $files to config dir $config_dir"
 else
     link_from="$config_dir"
     link_to="$repo_dir"
-    echo "Backing up files $files in config dir $config_dir"
+    wisper "Backing up files $files in config dir $config_dir"
 fi
 
 # Copy and add all file
@@ -71,7 +84,7 @@ for file in $files
 do
     if [[ "$link_from/$file" -ef "$link_to/$file" ]]
     then
-        echo "Already linked file: $file"
+        wisper "Already linked file: $file"
     elif [[ -d "$link_from/$file" ]]
     then
         mkdir -p "$link_to/$file"
@@ -79,7 +92,7 @@ do
         do
             if [[ "$link_from/$file/$rfile" -ef "$link_to/$file/$rfile" ]]
             then
-                echo "Already linked file: $file/$rfile"
+                wisper "Already linked file: $file/$rfile"
             else
                 ln -fv "$link_from/$file/$rfile" "$link_to/$file"
             fi
@@ -89,6 +102,6 @@ do
         mkdir -p "$link_to/$(dirname "$file")"
         ln -fv "$link_from/$file" "$link_to/$file"
     else
-        echo "File not found: $file"
+        wisper "File not found: $file"
     fi
 done
