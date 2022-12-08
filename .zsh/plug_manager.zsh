@@ -4,13 +4,30 @@
 # Copied from github.com/xylous/mzpm
 ################################################################################
 
+readonly -i CURRENT_DATE=$(date +%s)
 readonly BIN_NAME="${$(basename "$0")%.*}"
 [[ -z "${MZPMCACHE_DIR}" ]] \
     && readonly CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/${BIN_NAME}"
+readonly LAST_UPDATE_PATH="${CACHE_DIR}/last_update"
 
 # Call this function to automatically install and source the plugin
 function plug_manager()
 {
+    if [[ -f "${LAST_UPDATE_PATH}" ]]; then
+        local -ri LAST_UPDATE=$(cat "${LAST_UPDATE_PATH}")
+        local -ri UPDATE_DIFF=$(( ${CURRENT_DATE} - ${LAST_UPDATE} ))
+        # Check if the difference is greater than one week (in seconds)
+        if [ ${UPDATE_DIFF} -gt 604800 ]; then
+            local -r NEED_UPDATE=true;
+        fi
+    else
+        local -r NEED_UPDATE=true;
+    fi
+
+    if [[ "${NEED_UPDATE}" = true ]]; then
+        echo "mzpm: will check for updates..."
+    fi
+
     for plug in "$@"; do
         # Check if plugin is already sourced; if true, then skip
         if [[ "${SOURCED_PLUGINS[@]}" =~ "${plug}" ]]; then
@@ -24,11 +41,15 @@ function plug_manager()
         local plug_author="$(dirname ${plug})"
         if [[ ! -d "${install_dir}" ]]; then
             download_plugin_from_github "${plug_author}" "${plug_name}" "${install_dir}"
-        else
+        elif [[ "${NEED_UPDATE}" = true ]]; then
             update_plugin_from_github "${plug_author}" "${plug_name}" "${install_dir}"
         fi
         load_zsh_plugin "${plug_name}" "${install_dir}"
     done
+
+    if [[ "${NEED_UPDATE}" = true ]]; then
+        echo "${CURRENT_DATE}" > "${LAST_UPDATE_PATH}"
+    fi
 }
 
 ###
