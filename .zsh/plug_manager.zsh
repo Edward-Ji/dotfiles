@@ -21,9 +21,11 @@ function plug_manager()
 
         local plug_name="$(basename ${plug})"
         local install_dir="${CACHE_DIR}/${plug_name}"
+        local plug_author="$(dirname ${plug})"
         if [[ ! -d "${install_dir}" ]]; then
-            local plug_author="$(dirname ${plug})"
             download_plugin_from_github "${plug_author}" "${plug_name}" "${install_dir}"
+        else
+            update_plugin_from_github "${plug_author}" "${plug_name}" "${install_dir}"
         fi
         load_zsh_plugin "${plug_name}" "${install_dir}"
     done
@@ -44,6 +46,26 @@ function download_plugin_from_github()
 
     echo "mzpm: downloading ${plug_author}/${plug_name}"
     git clone --depth=1 --shallow-submodule "${plug_link}" "${install_dir}" 2>/dev/null
+}
+
+###
+# Update a ZSH plugin from github
+# Arguments:    $1: plugin author
+#               $2: plugin name
+#               $3: directory in which the plugin should be updated
+###
+function update_plugin_from_github()
+{
+    local plug_author="$1"
+    local plug_name="$2"
+    local install_dir="$3"
+    local plug_link="https://github.com/${plug_author}/${plug_name}"
+
+    git -C "${install_dir}" fetch 2>/dev/null
+    if [[ $(git -C "${install_dir}" rev-list ...origin --count) -ne 0 ]]; then
+        echo "mzpm: updating ${plug_author}/${plug_name}"
+        git -C "${install_dir}" pull --force 2>/dev/null
+    fi
 }
 
 ###
