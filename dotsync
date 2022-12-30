@@ -55,7 +55,7 @@ wisper() {
 if [[ ! -r $include_file ]]
 then
     echo "Missing include file" >&2
-    read -p "Generate include file using sample and continue? [Y/n]" -n 1 ans
+    read -r -p "Generate include file using sample and continue? [Y/n]" -n 1 ans
     case $ans in
         [Nn])
             exit;;
@@ -65,7 +65,7 @@ then
             ;;
     esac
 fi
-files=$(cat $include_file)
+files=$(cat "$include_file")
 
 # Handle install mode
 if [[ $mode = 'i' ]]
@@ -88,7 +88,7 @@ do
     elif [[ -d "$link_from/$file" ]]
     then
         mkdir -p "$link_to/$file"
-        for rfile in $(ls -A $link_from/$file)
+        for rfile in $(basename "$link_from"/"$file"/*)
         do
             if [[ "$link_from/$file/$rfile" -ef "$link_to/$file/$rfile" ]]
             then
