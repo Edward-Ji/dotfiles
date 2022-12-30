@@ -88,8 +88,9 @@ do
     elif [[ -d "$link_from/$file" ]]
     then
         mkdir -p "$link_to/$file"
-        for rfile in $(basename "$link_from"/"$file"/*)
+        for rfile in "$link_from"/"$file"/*
         do
+            rfile=$(basename "$rfile")
             if [[ "$link_from/$file/$rfile" -ef "$link_to/$file/$rfile" ]]
             then
                 wisper "Already linked file: $file/$rfile"
