@@ -13,7 +13,12 @@ PROMPT='%B%3~%b '
 zstyle ':vcs_info:git*' formats '%b'
 zstyle ':vcs_info:git*' actionformats '%b (%a)'
 autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
+precmd_vcs_info() {
+    vcs_info
+    if [[ "${#vcs_info_msg_0_}" -ge 15 ]]; then
+        vcs_info_msg_0_="${vcs_info_msg_0_:0:12}..."
+    fi
+}
 precmd_functions+=( precmd_vcs_info )
 PROMPT+='${vcs_info_msg_0_:+"ᚠ $vcs_info_msg_0_ "}'
 
