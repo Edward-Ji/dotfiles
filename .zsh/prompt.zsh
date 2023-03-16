@@ -31,3 +31,6 @@ PROMPT+='%(?.%F{green}.%F{red})❯%(!.❯.)%f '
 
 # show hostname
 RPROMPT='%F{8}%n@%m%f'
+
+################
+setopt INTERACTIVE_COMMENTS
