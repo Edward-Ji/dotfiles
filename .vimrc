@@ -122,6 +122,7 @@ let g:ycm_show_detailed_diag_in_popup = 1
 let g:ycm_update_diagnostics_in_insert = 0
 
 nmap <leader>D <plug>(YCMHover)
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
 function! s:CustomizeYcmLocationWindow()
     setlocal wrap
