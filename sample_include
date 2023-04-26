@@ -1,6 +1,6 @@
 .inputrc
 .vimrc .vim/after/ftplugin
-.config/nvim/init.vim
+.config/nvim/init.lua .config/nvim/lua/eji .config/nvim/lua/after/plugin
 .hushlogin .zsh .zshenv .zshrc .zprofile
 .bashrc
 .gitignore_global .gitconfig
