@@ -14,7 +14,7 @@ vim.opt.colorcolumn = '80'
 
 vim.opt.swapfile = false
 vim.opt.undofile = true
-vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
+vim.opt.undodir = os.getenv('HOME') .. '/.nvim/undodir'
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
