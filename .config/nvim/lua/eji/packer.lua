@@ -11,9 +11,25 @@ return require('packer').startup(function(use)
 
 	use 'mbbill/undotree'
 
-	use 'tpope/vim-fugitive'
+    use 'tpope/vim-fugitive'
+    use 'lewis6991/gitsigns.nvim'
 
     use 'wakatime/vim-wakatime'
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = function()
+            require('lualine').setup()
+        end
+    }
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 
     use {
         "windwp/nvim-autopairs",
