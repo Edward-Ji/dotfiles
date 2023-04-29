@@ -5,7 +5,13 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use {
+        'marko-cerovac/material.nvim',
+        config = function()
+            vim.g.material_style = 'lighter'
+            vim.cmd 'colorscheme material'
+        end
+    }
 
     use 'nvim-tree/nvim-tree.lua'
 
