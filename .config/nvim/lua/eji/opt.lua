@@ -2,6 +2,9 @@ vim.opt.guicursor = ''
 
 vim.opt.termguicolors = true
 
+vim.opt.showcmd = false
+vim.opt.showmode = false
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 

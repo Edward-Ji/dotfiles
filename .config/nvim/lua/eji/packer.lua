@@ -5,13 +5,7 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-    use {
-        'marko-cerovac/material.nvim',
-        config = function()
-            vim.g.material_style = 'lighter'
-            vim.cmd 'colorscheme material'
-        end
-    }
+    use 'marko-cerovac/material.nvim'
 
     use 'nvim-tree/nvim-tree.lua'
 
@@ -24,11 +18,8 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-        config = function()
-            require('lualine').setup()
-        end
-    }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+   }
 
     use {
         'numToStr/Comment.nvim',
