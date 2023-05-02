@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-    use 'marko-cerovac/material.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use 'nvim-tree/nvim-tree.lua'
 
