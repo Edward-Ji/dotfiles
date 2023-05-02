@@ -1,4 +1,13 @@
-vim.g.material_style = 'lighter'
-vim.cmd 'colorscheme material'
+require('catppuccin').setup({
+    flavour = 'latte', -- latte, frappe, macchiato, mocha
+    no_italic = true,
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+    },
+})
 
-vim.keymap.set('n', '<leader>ms', require("material.functions").find_style)
+-- setup must be called before loading
+vim.cmd.colorscheme 'catppuccin'
