@@ -9,8 +9,6 @@ return require('packer').startup(function(use)
 
     use 'nvim-tree/nvim-tree.lua'
 
-	use 'mbbill/undotree'
-
     use 'tpope/vim-fugitive'
     use 'lewis6991/gitsigns.nvim'
 
