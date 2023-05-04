@@ -102,8 +102,7 @@ let g:airline_section_z = airline#section#create(['%3p%%: ', 'linenr', ':%3v'])
 " NERDTree options and shortcuts
 let g:NERDTreeIgnore = ['__pycache__']
 
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <leader>t :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " NERDCommenter options
