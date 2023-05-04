@@ -5,8 +5,8 @@ export HISTTIMEFORMAT='[%F %T] '
 export SAVEHIST=10000
 
 # change default command line editor to vim
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # set default bat theme
 export BAT_THEME="GitHub"
