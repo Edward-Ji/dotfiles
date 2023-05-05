@@ -9,7 +9,6 @@ brew "webp"
 brew "autoconf"
 brew "automake"
 brew "bash"
-brew "bat"
 brew "berkeley-db", link: true
 brew "glib"
 brew "python@3.9"

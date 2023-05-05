@@ -8,9 +8,6 @@ export SAVEHIST=10000
 export EDITOR=nvim
 export VISUAL=nvim
 
-# set default bat theme
-export BAT_THEME="GitHub"
-
 # cargo generated
 [[ -r "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
