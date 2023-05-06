@@ -1,5 +1,3 @@
-vim.g.leadermap = '\\'
-
 vim.keymap.set('n', '<M-j>', "V:move '>+1<CR>gv=")
 vim.keymap.set('n', '<M-k>', "V:move '<-2<CR>gv=")
 
