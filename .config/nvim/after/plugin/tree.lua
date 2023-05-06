@@ -10,7 +10,7 @@ local function my_on_attach(bufnr)
     vim.keymap.set('n', '<C-e>', api.node.open.replace_tree_buffer,     opts('Open: In Place'))
     vim.keymap.set('n', '<C-k>', api.node.show_info_popup,              opts('Info'))
     vim.keymap.set('n', '<C-r>', api.fs.rename_sub,                     opts('Rename: Omit Filename'))
-    -- vim.keymap.set('n', '<C-t>', api.node.open.tab,                     opts('Open: New Tab'))
+    vim.keymap.set('n', '<C-t>', api.node.open.tab,                     opts('Open: New Tab'))
     vim.keymap.set('n', '<C-v>', api.node.open.vertical,                opts('Open: Vertical Split'))
     vim.keymap.set('n', '<C-x>', api.node.open.horizontal,              opts('Open: Horizontal Split'))
     vim.keymap.set('n', '<BS>',  api.node.navigate.parent_close,        opts('Close Directory'))
@@ -60,7 +60,7 @@ local function my_on_attach(bufnr)
     vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
 
     -- user mappings
-    -- vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
 end
 
 require("nvim-tree").setup({
@@ -74,5 +74,5 @@ require("nvim-tree").setup({
     on_attach = my_on_attach
 })
 
-vim.keymap.set('n', '<C-t>', api.tree.toggle)
-vim.keymap.set('n', '<leader>t', api.tree.focus)
+vim.keymap.set('n', '<leader>tt', api.tree.toggle)
+vim.keymap.set('n', '<leader>tf', api.tree.focus)
