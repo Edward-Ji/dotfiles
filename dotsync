@@ -103,6 +103,6 @@ do
         mkdir -p "$link_to/$(dirname "$file")"
         ln -fv "$link_from/$file" "$link_to/$file"
     else
-        wisper "File not found: $file"
+        echo "File not found: $file"
     fi
 done
