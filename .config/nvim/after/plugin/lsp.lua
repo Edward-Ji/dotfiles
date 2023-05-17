@@ -1,7 +1,10 @@
 local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
-    'pyright'
+    black,
+    clangd,
+    pylint,
+    pyright,
 })
 
 lsp.on_attach(function(_, bufnr)
