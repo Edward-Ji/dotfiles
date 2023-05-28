@@ -45,8 +45,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" Light & Dark color schemes for terminal and GUI Vim awesome editor
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Lean & mean status/tabline for vim that's light as air.
 Plug 'vim-airline/vim-airline'
@@ -84,13 +83,12 @@ Plug 'Vimjas/vim-python-pep8-indent'
 " Initialize plugin system
 call plug#end()
 
-" Use plugged paper color theme
-set t_Co=256
-set background=light
-colorscheme PaperColor
+" Use catppuccin theme
+set termguicolors
+colorscheme catppuccin_latte
 
 " Set airline options
-let g:airline_theme='papercolor'
+let g:airline_theme = 'catppuccin_latte'
 
 function! MyLineNumber()
   return substitute(line('.'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g') . ' | '
@@ -102,8 +100,8 @@ let g:airline_section_z = airline#section#create(['%3p%%: ', 'linenr', ':%3v'])
 " NERDTree options and shortcuts
 let g:NERDTreeIgnore = ['__pycache__']
 
-nnoremap <leader>t :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>tt :NERDTreeToggle<CR>
+nnoremap <leader>tf :NERDTreeFocus<CR>
 
 " NERDCommenter options
 let g:NERDSpaceDelims = 1
