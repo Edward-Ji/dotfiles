@@ -42,6 +42,14 @@ return require('packer').startup(function(use)
     }
 
     use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {}
+        end,
+        requires = "nvim-treesitter/nvim-treesitter"
+    }
+
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
