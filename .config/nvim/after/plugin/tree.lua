@@ -70,6 +70,9 @@ require("nvim-tree").setup({
     },
     filters = {
         dotfiles = true,
+        custom = {
+            "__pycache__"
+        }
     },
     on_attach = my_on_attach
 })
