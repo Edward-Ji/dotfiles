@@ -21,6 +21,7 @@ set foldlevelstart=99 " no folds closed
 set updatetime=100    " unit: ms
 set completeopt=menuone,popup
 set splitright
+set fillchars=vert:\|,fold:-,eob:\ 
 
 set textwidth=80
 set colorcolumn=80
