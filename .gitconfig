@@ -3,6 +3,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
+	quotePath = false
 [alias]
 	praise = blame
 	a = ! git add . && git status
