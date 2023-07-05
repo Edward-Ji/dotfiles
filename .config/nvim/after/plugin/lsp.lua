@@ -9,6 +9,12 @@ lsp.ensure_installed({
 
 lsp.on_attach(function(_, bufnr)
     lsp.default_keymaps({buffer = bufnr})
+
+    local opts = {buffer = bufnr}
+    local bind = vim.keymap.set
+
+    bind('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = true})
+    bind('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 end)
 
 lsp.setup()
