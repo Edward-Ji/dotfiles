@@ -4,8 +4,7 @@ require('lualine').setup {
         component_separators = { left = '|', right = '|'},
         section_separators = { left = '', right = '' },
         ignore_focus = {
-            'NvimTree',
-            'undotree'
+            'NvimTree'
         }
     }
 }
