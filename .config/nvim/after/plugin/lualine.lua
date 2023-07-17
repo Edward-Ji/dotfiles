@@ -23,5 +23,10 @@ require('lualine').setup {
                 end
             }
         }
+    },
+    winbar = {
+        lualine_b = {
+            'searchcount'
+        }
     }
 }
