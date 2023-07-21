@@ -8,9 +8,6 @@ vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
 vim.opt.wrap = false
 vim.opt.textwidth = 80
 vim.opt.colorcolumn = '80'
