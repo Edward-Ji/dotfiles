@@ -9,24 +9,33 @@ require('lualine').setup {
     tabline = {
         lualine_a = {
             {
-                'tabs',
-                max_length = vim.o.columns,
+                'buffers',
                 mode = 2,
-                fmt = function(name, context)
-                    -- Show + if buffer is modified in tab
-                    local buflist = vim.fn.tabpagebuflist(context.tabnr)
-                    local winnr = vim.fn.tabpagewinnr(context.tabnr)
-                    local bufnr = buflist[winnr]
-                    local mod = vim.fn.getbufvar(bufnr, '&mod')
-
-                    return name .. (mod == 1 and ' +' or '')
-                end
+                max_length = vim.o.columns * 2 / 3,
+                symbols = {
+                    modified = ' +'
+                }
+            }
+        },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {
+            {
+                'tabs',
+                max_length = vim.o.columns / 3,
             }
         }
     },
     winbar = {
+        lualine_a = {},
         lualine_b = {
             'searchcount'
-        }
+        },
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
     }
 }
