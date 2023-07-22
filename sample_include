@@ -1,5 +1,5 @@
 .inputrc
-.vimrc .vim/after/ftplugin
+.vimrc
 .config/nvim/init.lua .config/nvim/lua/eji .config/nvim/after/plugin
 .tmux.conf
 .hushlogin .zsh .zshenv .zshrc .zprofile
