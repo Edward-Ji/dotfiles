@@ -60,6 +60,8 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    use 'hrsh7th/cmp-path'
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',

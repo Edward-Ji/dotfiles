@@ -17,6 +17,11 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+    sources = {
+        {name = 'nvim_lsp'},
+        {name = 'path'},
+        {name = 'luasnip'}
+    },
     mapping = {
         ['<CR>'] = cmp.mapping.confirm({select = true}),
         ['<Tab>'] = cmp_action.luasnip_supertab(),
