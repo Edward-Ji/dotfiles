@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
 
     use {
