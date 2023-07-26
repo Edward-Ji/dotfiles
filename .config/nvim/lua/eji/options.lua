@@ -2,11 +2,12 @@ vim.opt.guicursor = ''
 
 vim.opt.termguicolors = true
 
-vim.opt.showcmd = false
-vim.opt.showmode = false
-
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+vim.opt.showcmd = false
+vim.opt.showmode = false
+vim.opt.shortmess:append('S')
 
 vim.opt.wrap = false
 vim.opt.textwidth = 80

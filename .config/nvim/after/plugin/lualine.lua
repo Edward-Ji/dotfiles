@@ -58,7 +58,17 @@ require('lualine').setup {
     },
     winbar = {
         lualine_a = {},
-        lualine_b = {'searchcount'},
+        lualine_b = {
+            {
+                'searchcount',
+                fmt = function(string, _)
+                    if string ~= '' then
+                        return vim.fn.getreg('/') .. ' ' .. string
+                    end
+                    return ''
+                end
+            },
+        },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
