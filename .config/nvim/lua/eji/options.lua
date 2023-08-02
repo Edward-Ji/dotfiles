@@ -11,7 +11,7 @@ vim.opt.shortmess:append('S')
 
 vim.opt.wrap = false
 vim.opt.textwidth = 80
-vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = '+1'
 
 vim.opt.swapfile = false
 vim.opt.undofile = true
