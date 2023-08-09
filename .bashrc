@@ -35,3 +35,8 @@ precmd() {
     local offsetcursor="\e[$((${COLUMNS} - ${#rprompt}))G"
     printf "${savecursor}${offsetcursor}${gray}${rprompt}${reset}${restorecursor}"
 }
+
+shopt -s histappend
+HISTSIZE=-1
+HISTFILESIZE=-1
+HISTCONTROL=ignoreboth
