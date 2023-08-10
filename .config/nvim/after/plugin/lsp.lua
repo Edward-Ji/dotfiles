@@ -1,12 +1,5 @@
 local lsp = require('lsp-zero').preset({})
 
-lsp.ensure_installed({
-    black,
-    clangd,
-    pylint,
-    pyright,
-})
-
 lsp.on_attach(function(_, bufnr)
     lsp.default_keymaps({buffer = bufnr})
 end)
