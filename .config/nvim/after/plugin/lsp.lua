@@ -1,3 +1,19 @@
+local lspconfig = require('lspconfig')
+lspconfig.texlab.setup {
+    settings = {
+        texlab = {
+            forwardSearch = {
+                executable = '/Applications/Skim.app/Contents/SharedSupport/displayline',
+                args = { "-n", "-g", "%l", "%p", "%f" }
+            },
+            build = {
+                forwardSearchAfter = true,
+                onSave = true
+            }
+        }
+    }
+}
+
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(_, bufnr)
