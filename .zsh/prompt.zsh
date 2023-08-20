@@ -9,6 +9,9 @@ setopt PROMPT_SUBST
 # Working directory
 PROMPT='%B%3~%b '
 
+# Conda integration
+PROMPT+='${CONDA_DEFAULT_ENV:+" $CONDA_DEFAULT_ENV "}'
+
 # Git integration
 zstyle ':vcs_info:git*' formats '%b'
 zstyle ':vcs_info:git*' actionformats '%b (%a)'
