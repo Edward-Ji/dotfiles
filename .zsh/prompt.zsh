@@ -12,6 +12,18 @@ PROMPT='%B%3~%b '
 # Conda integration
 PROMPT+='${CONDA_DEFAULT_ENV:+" $CONDA_DEFAULT_ENV "}'
 
+# Jenv integration
+precmd_jenv_info() {
+    if (( $+commands[jenv] )); then
+        jenv_info="$(jenv version-name)"
+        if [[ "${jenv_info}" = system ]]; then
+            jenv_info=
+        fi
+    fi
+}
+precmd_functions+=( precmd_jenv_info )
+PROMPT+='${jenv_info:+" $jenv_info "}'
+
 # Git integration
 zstyle ':vcs_info:git*' formats '%b'
 zstyle ':vcs_info:git*' actionformats '%b (%a)'
