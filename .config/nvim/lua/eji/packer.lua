@@ -17,7 +17,12 @@ return require('packer').startup(function(use)
 
     use { "catppuccin/nvim", as = "catppuccin" }
 
-    use 'nvim-tree/nvim-tree.lua'
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    }
 
     use 'tpope/vim-fugitive'
     use 'lewis6991/gitsigns.nvim'
