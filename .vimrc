@@ -6,6 +6,7 @@ set shiftwidth=4
 set backspace=2       " indent,eol,start
 set expandtab
 set smartindent
+set number
 set relativenumber
 set nowrap
 set smartcase
