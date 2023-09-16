@@ -31,10 +31,33 @@ then
 fi
 # <<< jenv initialization <<<
 
+# >>> nvm initialization >>>
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# <<< nvm initialization <<<
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE='/opt/homebrew/opt/micromamba/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/Users/eji/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+elif [ -s "${MAMBA_EXE}" ]; then
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+if type micromamba &>/dev/null
+then
+    alias mamba="micromamba"
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
 # homebrew auto-complete
 if type brew &>/dev/null
 then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
 # The following lines were added by compinstall
