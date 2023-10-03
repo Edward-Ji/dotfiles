@@ -1,5 +1,5 @@
 # Prompt end of line mark
-PROMPT_EOL_MARK='%F{8}\%f'
+PROMPT_EOL_MARK='%F{8}󰌑%f'
 
 ##########
 # Prompt #
