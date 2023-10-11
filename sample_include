@@ -1,6 +1,6 @@
 .inputrc
 .vimrc
-.config/nvim/init.lua .config/nvim/lua/eji .config/nvim/after/plugin
+.config/nvim/init.lua .config/nvim/lua
 .tmux.conf
 .hushlogin .zsh .zshenv .zshrc .zprofile
 .bashrc
