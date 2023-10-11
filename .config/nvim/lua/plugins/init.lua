@@ -3,13 +3,7 @@ return {
 
     'wakatime/vim-wakatime',
 
-    {
-        'numToStr/Comment.nvim',
-        config = true
-    },
+    { 'numToStr/Comment.nvim', opts = { ignore = '^$' }, lazy = false },
 
-    {
-        "windwp/nvim-autopairs",
-        config = true
-    },
+    { 'windwp/nvim-autopairs', event = "InsertEnter" }
 }
