@@ -79,30 +79,39 @@ else
     wisper "Backing up files $files in config dir $config_dir"
 fi
 
-# Copy and add all file
-for file in $files
-do
+link_file() {
+    declare -r link_from="$1"
+    declare -r link_to="$2"
+    declare -r file="$3"
+
     if [[ "$link_from/$file" -ef "$link_to/$file" ]]
     then
-        wisper "Already linked file: $file"
-    elif [[ -d "$link_from/$file" ]]
-    then
-        mkdir -p "$link_to/$file"
-        for rfile in "$link_from"/"$file"/*
-        do
-            rfile=$(basename "$rfile")
-            if [[ "$link_from/$file/$rfile" -ef "$link_to/$file/$rfile" ]]
-            then
-                wisper "Already linked file: $file/$rfile"
-            else
-                ln -fv "$link_from/$file/$rfile" "$link_to/$file"
-            fi
-        done
-    elif [[ -f "$link_from/$file" ]]
-    then
+        wisper "Already linked file: $link_to/$file"
+    else
         mkdir -p "$link_to/$(dirname "$file")"
         ln -fv "$link_from/$file" "$link_to/$file"
-    else
-        echo "File not found: $file"
     fi
+}
+
+link() {
+    declare -r link_from="$1"
+    declare -r link_to="$2"
+    declare -r file="$3"
+
+    if [[ -f "$link_from/$file" ]]
+    then
+        link_file "$link_from" "$link_to" "$file"
+    elif [[ -d "$link_from/$file" ]]
+    then
+        for subfile in "$link_from/$file/"*
+        do
+            subfile="$(basename "$subfile")"
+            link "$link_from/$file" "$link_to/$file" "$subfile"
+        done
+    fi
+}
+
+for file in $files
+do
+    link "$link_from" "$link_to" "$file"
 done
