@@ -1,4 +1,11 @@
 function config()
+    local lsp_zero = require('lsp-zero')
+    lsp_zero.extend_lspconfig()
+
+    lsp_zero.on_attach(function(_, bufnr)
+        lsp_zero.default_keymaps({buffer = bufnr})
+    end)
+
     local lspconfig = require('lspconfig')
     lspconfig.texlab.setup {
         settings = {
@@ -15,16 +22,20 @@ function config()
         }
     }
 
-    local lsp = require('lsp-zero').preset({})
-
-    lsp.on_attach(function(_, bufnr)
-        lsp.default_keymaps({buffer = bufnr})
-    end)
-
-    lsp.setup()
+    require('mason').setup({})
+    require('mason-lspconfig').setup({
+        ensure_installed = {
+            'bashls',
+            'clangd',
+            'pyright',
+            'texlab'
+        },
+        handlers = { lsp_zero.default_setup }
+    })
 
     local cmp = require('cmp')
     local cmp_action = require('lsp-zero').cmp_action()
+    local cmp_format = require('lsp-zero').cmp_format()
 
     require('luasnip.loaders.from_snipmate').lazy_load()
 
@@ -45,34 +56,27 @@ function config()
             ['<Tab>'] = cmp_action.luasnip_supertab(),
             ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
             ['<A-Space>'] = cmp.mapping.complete()
-        }
+        },
+        formatting = cmp_format
     })
 end
 
 return {
+    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x', config = config},
+
+    -- LSP Support
+    'neovim/nvim-lspconfig',
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+
+    -- Sources
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'saadparwaiz1/cmp_luasnip',
     'rafamadriz/friendly-snippets',
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        dependencies = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {
-                'williamboman/mason.nvim',         -- Optional
-                build = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
-        },
-        config = config
-    }
+    -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
 }
