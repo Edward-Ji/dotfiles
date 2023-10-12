@@ -35,7 +35,6 @@ function config()
 
     local cmp = require('cmp')
     local cmp_action = require('lsp-zero').cmp_action()
-    local cmp_format = require('lsp-zero').cmp_format()
 
     require('luasnip.loaders.from_snipmate').lazy_load()
 
@@ -56,8 +55,7 @@ function config()
             ['<Tab>'] = cmp_action.luasnip_supertab(),
             ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
             ['<A-Space>'] = cmp.mapping.complete()
-        },
-        formatting = cmp_format
+        }
     })
 end
 
