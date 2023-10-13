@@ -24,12 +24,6 @@ function config()
 
     require('mason').setup({})
     require('mason-lspconfig').setup({
-        ensure_installed = {
-            'bashls',
-            'clangd',
-            'pyright',
-            'texlab'
-        },
         handlers = { lsp_zero.default_setup }
     })
 
