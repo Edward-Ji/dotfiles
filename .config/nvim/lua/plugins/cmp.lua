@@ -29,9 +29,8 @@ function plugins.config()
         sources = {
             {name = 'buffer'},
             {name = 'path'},
-            {name = 'cmdline'},
             {name = 'nvim_lsp'},
-            {name = 'luasnip'},
+            {name = 'luasnip'}
         },
         mapping = cmp.mapping.preset.insert({
             ['<CR>'] = cmp.mapping.confirm({select = false}),
