@@ -48,6 +48,21 @@ function plugins.config()
         ensure_installed = {},
         handlers = {default_setup},
     })
+
+    require('lspconfig').texlab.setup({
+        settings = {
+            texlab = {
+                forwardSearch = {
+                    executable = '/Applications/Skim.app/Contents/SharedSupport/displayline',
+                    args = { "-n", "-g", "%l", "%p", "%f" }
+                },
+                build = {
+                    forwardSearchAfter = true,
+                    onSave = true
+                }
+            }
+        }
+    })
 end
 
 return plugins
