@@ -43,10 +43,10 @@ do
     esac
 done
 
-# Config directory (defauls to home directory)
+# Config directory (defaults to home directory)
 config_dir="${XDG_CONFIG_DIR:-$HOME}"
 
-# Repository directory (the direcotry of this script)
+# Repository directory (the directory of this script)
 repo_dir=$(dirname "$0")
 include_file="$repo_dir/include"
 
