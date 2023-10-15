@@ -4,8 +4,8 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-        require('catppuccin').setup({
-            flavour = 'latte', -- latte, frappe, macchiato, mocha
+        require("catppuccin").setup({
+            flavour = 'latte',
             no_italic = true,
             integrations = {
                 cmp = true,
@@ -14,6 +14,6 @@ return {
                 telescope = true,
             }
         })
-        vim.cmd([[colorscheme catppuccin]])
+        vim.cmd.colorscheme("catppuccin")
     end,
 }
