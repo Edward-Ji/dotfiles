@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-usage="Usage: $(basename "$0") [-h] [-i] [-v]
+usage="Usage: $(basename "$0") [-d] [-h] [-i] [-v]
     This script syncs specific files between the XDG config directory and this
     git repository. The XDG config directory if not set defaults to the home
     directory. The sync works by creating a hard links. The default mode is
@@ -8,6 +8,7 @@ usage="Usage: $(basename "$0") [-h] [-i] [-v]
     in the git repository.
 
 Options:
+    -d  delete destination dirs first
     -h  prints this usage message
     -i  specifies install mode, which creates link in reverse to that of
         backup mode
@@ -15,11 +16,15 @@ Options:
 
 declare mode
 declare -i verbosity=0
+declare -i delete=0
 
 # Handle options
-while getopts ':hiv' option
+while getopts ':dhiv' option
 do
     case $option in
+        d)
+            delete=1;
+            ;;
         h)
             echo "$usage"
             exit
@@ -113,5 +118,10 @@ link() {
 
 for file in $files
 do
+    if [[ $delete -ne 0 ]]
+    then
+        rm -r "${link_to:?}/$file"
+        echo "Removed $link_to/$file"
+    fi
     link "$link_from" "$link_to" "$file"
 done
