@@ -11,11 +11,6 @@ window:
   startup_mode: Maximized
   option_as_alt: OnlyLeft
 
-scrolling:
-  history: 10000
-  multiplier: 1
-  faux_multiplier: 1
-
 font:
   normal:
     family: RobotoMono Nerd Font Mono
