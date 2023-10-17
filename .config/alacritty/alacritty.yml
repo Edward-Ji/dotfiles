@@ -1,0 +1,29 @@
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 5
+    y: 3
+  startup_mode: Maximized
+  option_as_alt: OnlyLeft
+
+scrolling:
+  history: 10000
+  multiplier: 1
+  faux_multiplier: 1
+
+font:
+  normal:
+    family: RobotoMono Nerd Font Mono
+    style: Regular
+  offset:
+    x: 1
+    y: 1
+  size: 16.0
+
+bell:
+  duration: 400
