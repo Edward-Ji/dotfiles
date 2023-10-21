@@ -1,7 +1,7 @@
 return {
     "danymat/neogen",
     dependencies = "nvim-treesitter/nvim-treesitter",
-    config = {
+    opts = {
         enabled = true,
         languages = {
             python = {

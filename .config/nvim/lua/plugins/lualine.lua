@@ -1,7 +1,7 @@
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true },
-    config = {
+    opts = {
         options = {
             theme = 'auto',
             ignore_focus = {"NvimTree"},
