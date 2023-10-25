@@ -1,3 +1,14 @@
+local indent = {
+    function()
+        local expand = vim.bo.expandtab and '󱁐' or '󰌒'
+        local width = vim.bo.expandtab and vim.bo.tabstop or vim.bo.shiftwidth
+        return expand .. ' ' .. width
+    end,
+    cond = function()
+        return vim.bo.filetype ~= ""
+    end,
+}
+
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true },
@@ -20,7 +31,7 @@ return {
                 'diagnostics'
             },
             lualine_c = {'filename'},
-            lualine_x = {'encoding', 'fileformat', 'filetype'},
+            lualine_x = {indent, 'encoding', 'fileformat', 'filetype'},
             lualine_y = {'progress'},
             lualine_z = {'location'}
         },
