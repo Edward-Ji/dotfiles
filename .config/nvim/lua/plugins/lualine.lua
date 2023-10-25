@@ -34,7 +34,7 @@ return {
                         NvimTree = 'NvimTree',
                         TelescopePrompt = 'Telescope',
                         fugitive = 'Fugitive',
-                        packer = 'Packer'
+                        lazy = 'Lazy'
                     },
                     symbols = {
                         modified = ' +'
