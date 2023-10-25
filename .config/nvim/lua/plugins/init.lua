@@ -3,6 +3,8 @@ return {
 
     'wakatime/vim-wakatime',
 
+    { 'nmac427/guess-indent.nvim', config = true },
+
     { 'numToStr/Comment.nvim', opts = { ignore = '^$' }, lazy = false },
 
     { 'windwp/nvim-autopairs', event = "InsertEnter", config = true },
