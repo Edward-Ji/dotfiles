@@ -3,11 +3,26 @@ return {
 
     'wakatime/vim-wakatime',
 
-    { 'nmac427/guess-indent.nvim', config = true },
+    {
+        'nmac427/guess-indent.nvim',
+        config = true
+    },
 
-    { 'numToStr/Comment.nvim', opts = { ignore = '^$' }, lazy = false },
+    {
+        'numToStr/Comment.nvim',
+        opts = { ignore = '^$' },
+        lazy = false
+    },
 
-    { 'windwp/nvim-autopairs', event = "InsertEnter", config = true },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
 
-    { 'williamboman/mason.nvim', lazy = false, config = true },
+    {
+        'williamboman/mason.nvim',
+        lazy = false,
+        config = true
+    },
 }
