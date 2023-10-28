@@ -31,7 +31,23 @@ return {
                 'diagnostics'
             },
             lualine_c = {'filename'},
-            lualine_x = {indent, 'encoding', 'fileformat', 'filetype'},
+            lualine_x = {
+                indent,
+                'encoding',
+                {
+                    'fileformat',
+                    icons_enabled = false,
+                    fmt = function(str)
+                        local tbl = {
+                            unix = "LF",
+                            dos = "CRLF",
+                            mac = "CR"
+                        }
+                        return tbl[str]
+                    end
+                },
+                'filetype'
+            },
             lualine_y = {'progress'},
             lualine_z = {'location'}
         },
