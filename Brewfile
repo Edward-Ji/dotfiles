@@ -15,6 +15,7 @@ brew "bash"
 brew "berkeley-db", link: true
 brew "bfg"
 brew "cmake"
+brew "conda-zsh-completion"
 brew "coreutils"
 brew "deno"
 brew "docker-completion"
