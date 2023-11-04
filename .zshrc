@@ -6,7 +6,7 @@ do
     source $zsh_file
 done
 
-plug_manager "esc/conda-zsh-completion" "agkozak/zsh-z"
+plug_manager "agkozak/zsh-z"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
