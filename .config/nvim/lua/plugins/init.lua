@@ -25,4 +25,13 @@ return {
         lazy = false,
         config = true
     },
+
+    {
+        'stevearc/conform.nvim',
+        opts = {
+            formatters_by_ft = {
+                python = { "isort", "black" }
+            }
+        }
+    }
 }
