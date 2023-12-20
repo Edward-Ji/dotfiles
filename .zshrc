@@ -31,6 +31,13 @@ then
 fi
 # <<< jenv initialization <<<
 
+# >>> rbenv initialization >>>
+if type rbenv &>/dev/null
+then
+    eval "$(rbenv init - zsh)"
+fi
+# <<< rbenv initialization <<<
+
 # >>> nvm initialization >>>
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
