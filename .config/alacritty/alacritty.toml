@@ -1,4 +1,4 @@
-import = ["/Users/eji/.config/alacritty/catppuccin/catppuccin-latte.toml"]
+import = ["~/.config/alacritty/catppuccin/catppuccin-latte.toml"]
 
 [bell]
 duration = 400
