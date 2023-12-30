@@ -82,5 +82,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 bindkey -v
 bindkey '^R' history-incremental-search-backward 
 bindkey '^S' history-incremental-search-forward
-
-true
