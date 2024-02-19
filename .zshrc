@@ -6,8 +6,6 @@ do
     source $zsh_file
 done
 
-plug_manager "agkozak/zsh-z"
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
@@ -77,6 +75,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# zoxide is a smarter cd command, inspired by z and autojump.
+if type zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward 
