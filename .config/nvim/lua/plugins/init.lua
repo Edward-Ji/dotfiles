@@ -1,7 +1,10 @@
 return {
     'tpope/vim-fugitive',
 
-    'wakatime/vim-wakatime',
+    {
+        'wakatime/vim-wakatime',
+        enabled = os.getenv('NVIM_MINIMAL') == nil
+    },
 
     {
         'nmac427/guess-indent.nvim',

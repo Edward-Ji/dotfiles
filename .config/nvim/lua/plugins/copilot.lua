@@ -46,5 +46,6 @@ return {
             copilot_node_command = 'node',
             server_opts_overrides = {},
         })
-    end
+    end,
+    enabled = os.getenv('NVIM_MINIMAL') == nil
 }
