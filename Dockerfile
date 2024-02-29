@@ -11,7 +11,7 @@ RUN chsh -s /bin/zsh tourist
 USER tourist
 WORKDIR /home/tourist
 COPY --chown=tourist:tour . dotfiles
-RUN dotfiles/dotsync -i && rm -r dotfiles
+RUN yes | dotfiles/dotsync -i && rm -r dotfiles
 
 # Install neovim plugins
 ENV NVIM_MINIMAL 1
