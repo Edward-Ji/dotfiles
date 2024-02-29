@@ -65,7 +65,7 @@ then
         [Nn])
             exit;;
         *)
-            cp sample_include include
+            cp "$repo_dir/sample_include" "$include_file"
             wisper "Copied sample include file"
             ;;
     esac
