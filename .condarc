@@ -1,1 +1,6 @@
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
 changeps1: false
