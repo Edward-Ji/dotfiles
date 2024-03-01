@@ -6,6 +6,9 @@ do
     source $zsh_file
 done
 
+# Define functions for autoloading
+fpath=('~/.zfunc' $fpath)
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
