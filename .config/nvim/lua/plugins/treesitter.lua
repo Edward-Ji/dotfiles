@@ -1,6 +1,6 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-    build = os.getenv('NVIM_MINIMAL') == nil and ':TSUpdate' or nil,
+    build = ':TSUpdate',
     config = function() 
         require("nvim-treesitter.configs").setup({
             -- Install parsers synchronously (only applied to `ensure_installed`)
