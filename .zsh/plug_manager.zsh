@@ -1,6 +1,19 @@
 #!/usr/bin/env zsh
 
-################################################################################
+# A minimal ZSH plugin manager
+#
+# This script is a simple plugin manager for ZSH. It allows you to easily
+# install and source plugins from GitHub. It also has an auto-update feature
+# that can be set to a specific time interval.
+#
+# In your .zshrc file, source this script and call the `plug_manager` function:
+#   MZPM_AUTO_UPDATE=86400 # optional, set to 1 day
+#   source plugin_manager.zsh
+#   plug_manager "author/plugin" "author/plugin2" ...
+# 
+# The original script is licensed under MIT License by xylous. I added the auto
+# update feature and some minor changes to the original script.
+#
 # MIT License
 # 
 # Copyright (c) 2022 xylous <xylous.e@gmail.com>
@@ -22,7 +35,6 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-################################################################################
 
 readonly -i CURRENT_DATE=$(date +%s)
 readonly BIN_NAME="${$(basename "$0")%.*}"
