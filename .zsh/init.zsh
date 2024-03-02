@@ -31,7 +31,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-# <<< nvm initialization <<<
 
 # mamba is a faster, drop-in replacement for conda
 export MAMBA_EXE='/opt/homebrew/opt/micromamba/bin/micromamba';
