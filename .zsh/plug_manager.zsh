@@ -34,10 +34,11 @@ readonly LAST_UPDATE_PATH="${CACHE_DIR}/last_update"
 function plug_manager()
 {
     if [[ -f "${LAST_UPDATE_PATH}" ]]; then
+        # Check if the difference is greater than the set time for auto update
+        # the time defaults to 7 days (604800 seconds)
         local -ri LAST_UPDATE=$(cat "${LAST_UPDATE_PATH}")
         local -ri UPDATE_DIFF=$(( ${CURRENT_DATE} - ${LAST_UPDATE} ))
-        # Check if the difference is greater than one week (in seconds)
-        if [ ${UPDATE_DIFF} -gt 604800 ]; then
+        if [[ ${UPDATE_DIFF} -gt ${MZPM_AUTO_UPDATE:-604800} ]]; then
             local -r NEED_UPDATE=true;
         fi
     else
