@@ -5,6 +5,12 @@ on:
   push:
     branches:
       - "main"
+    paths-ignore:
+      - ".gitignore"
+      - ".nvim.lua"
+      - "Brewfile"
+      - "LICENSE"
+      - "README.md"
 
 jobs:
   push_to_registry:
