@@ -6,6 +6,10 @@ plugins = {
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         {
+            'R-nvim/cmp-r',
+            config = true
+        },
+        {
             "L3MON4D3/LuaSnip",
             version = "v2.*",
             build = "make install_jsregexp",
@@ -31,6 +35,7 @@ function plugins.config()
         sources = {
             {name = 'buffer'},
             {name = 'path'},
+            {name = 'cmp_r'},
             {name = 'nvim_lsp'},
             {name = 'luasnip'}
         },
