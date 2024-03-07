@@ -10,6 +10,9 @@ vim.opt.relativenumber = true
 vim.opt.swapfile = false
 vim.opt.undofile = true
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.showcmd = false
 vim.opt.showmode = false
 vim.opt.shortmess:append('S')
