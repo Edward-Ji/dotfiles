@@ -63,6 +63,18 @@ function plugins.config()
             }
         }
     })
+
+    require'lspconfig'.rust_analyzer.setup{
+        settings = {
+            ['rust-analyzer'] = {
+                diagnostics = {
+                    experimental = {
+                        enable = true
+                    }
+                }
+            }
+        }
+    }
 end
 
 return plugins
