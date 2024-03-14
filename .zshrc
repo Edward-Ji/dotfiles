@@ -1,13 +1,13 @@
 ####################
 # Load ZSH Plugins #
 ####################
-for zsh_file in $HOME/.zsh/*.zsh
+for zsh_file in ~/.zsh/*.zsh
 do
     source $zsh_file
 done
 
 # Define functions for autoloading
-fpath=('~/.zfunc' $fpath)
+fpath=(~/.zfunc $fpath)
 
 # homebrew auto-complete
 if type brew &>/dev/null; then
