@@ -21,10 +21,6 @@ color = "#585B70"
 [scrolling]
 history = 100000
 
-[shell]
-args = ["zsh", "--login"]
-program = "/usr/bin/env"
-
 [window]
 option_as_alt = "OnlyLeft"
 startup_mode = "Maximized"
