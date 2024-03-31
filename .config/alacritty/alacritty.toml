@@ -16,6 +16,9 @@ style = "Regular"
 duration = 400
 color = "#585B70"
 
+[cursor]
+style.blinking = "Never"
+
 [scrolling]
 history = 100000
 
