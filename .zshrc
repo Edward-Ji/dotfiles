@@ -14,15 +14,12 @@ if type brew &>/dev/null; then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
-# The following lines were added by compinstall
-
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} r:|[._-/]=** r:|=**' 'm:{[:lower:]}={[:upper:]}'
-zstyle :compinstall filename '/Users/admin/.zshrc'
+zstyle :compinstall filename "${HOME}/.zshrc"
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward 
