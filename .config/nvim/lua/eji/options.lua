@@ -15,7 +15,7 @@ vim.opt.smartcase = true
 
 vim.opt.showcmd = false
 vim.opt.showmode = false
-vim.opt.shortmess:append('S')
+vim.opt.shortmess:append('IS')
 
 vim.opt.wrap = false
 vim.opt.textwidth = 80
