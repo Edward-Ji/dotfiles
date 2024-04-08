@@ -61,7 +61,8 @@ return {
                         NvimTree = 'NvimTree',
                         TelescopePrompt = 'Telescope',
                         fugitive = 'Fugitive',
-                        lazy = 'Lazy'
+                        lazy = 'Lazy',
+                        mason = 'Mason'
                     },
                     symbols = {
                         modified = ' +'
