@@ -3,29 +3,29 @@ return {
 
     {
         'wakatime/vim-wakatime',
-        enabled = os.getenv('NVIM_MINIMAL') == nil
+        enabled = os.getenv('NVIM_MINIMAL') == nil,
     },
 
     {
         'nmac427/guess-indent.nvim',
-        config = true
+        config = true,
     },
 
     {
         'numToStr/Comment.nvim',
         opts = { ignore = '^$' },
-        lazy = false
+        lazy = false,
     },
 
     {
         'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
+        event = 'InsertEnter',
+        config = true,
     },
 
     {
         'williamboman/mason.nvim',
         lazy = false,
-        config = true
-    }
+        config = true,
+    },
 }

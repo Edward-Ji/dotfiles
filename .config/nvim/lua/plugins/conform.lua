@@ -3,7 +3,7 @@ return {
     opts = {
         formatters_by_ft = {
             python = { 'isort', 'black' },
-            rust = { 'rustfmt' }
-        }
-    }
+            rust = { 'rustfmt' },
+        },
+    },
 }

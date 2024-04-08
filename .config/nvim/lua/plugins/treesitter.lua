@@ -1,8 +1,8 @@
 return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    config = function() 
-        require("nvim-treesitter.configs").setup({
+    config = function()
+        require('nvim-treesitter.configs').setup({
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
 
@@ -18,7 +18,7 @@ return {
                 -- Using this option may slow down your editor, and you may see some duplicate highlights.
                 -- Instead of true it can also be a list of languages
                 additional_vim_regex_highlighting = false,
-            }
+            },
         })
-    end
+    end,
 }

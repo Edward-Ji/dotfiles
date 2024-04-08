@@ -2,18 +2,18 @@ return {
     'R-nvim/R.nvim',
     config = function()
         local opts = {
-            R_args = {"--quiet"},
+            R_args = { '--quiet' },
             hook = {
-                after_config = function ()
-                    if vim.o.syntax ~= "rbrowser" then
-                        vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {})
-                        vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {})
+                after_config = function()
+                    if vim.o.syntax ~= 'rbrowser' then
+                        vim.api.nvim_buf_set_keymap(0, 'n', '<Enter>', '<Plug>RDSendLine', {})
+                        vim.api.nvim_buf_set_keymap(0, 'v', '<Enter>', '<Plug>RSendSelection', {})
                     end
-                end
+                end,
             },
-            rconsole_width = math.floor(vim.fn.winwidth(0) / 2)
+            rconsole_width = math.floor(vim.fn.winwidth(0) / 2),
         }
-        require("r").setup(opts)
+        require('r').setup(opts)
     end,
-    lazy = false
+    lazy = false,
 }

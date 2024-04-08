@@ -7,42 +7,42 @@ plugins = {
         'hrsh7th/cmp-cmdline',
         {
             'R-nvim/cmp-r',
-            config = true
+            config = true,
         },
         {
-            "L3MON4D3/LuaSnip",
-            version = "v2.*",
-            build = "make install_jsregexp",
-            dependencies = { "rafamadriz/friendly-snippets" }
+            'L3MON4D3/LuaSnip',
+            version = 'v2.*',
+            build = 'make install_jsregexp',
+            dependencies = { 'rafamadriz/friendly-snippets' },
         },
-        'saadparwaiz1/cmp_luasnip'
-    }
+        'saadparwaiz1/cmp_luasnip',
+    },
 }
 
 function plugins.config()
-    require("luasnip.loaders.from_vscode").lazy_load()
+    require('luasnip.loaders.from_vscode').lazy_load()
 
     local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
     end
 
-    local luasnip = require("luasnip")
+    local luasnip = require('luasnip')
     local cmp = require('cmp')
 
     cmp.setup({
         sources = {
-            {name = 'buffer'},
-            {name = 'path'},
-            {name = 'cmp_r'},
-            {name = 'nvim_lsp'},
-            {name = 'luasnip'}
+            { name = 'buffer' },
+            { name = 'path' },
+            { name = 'cmp_r' },
+            { name = 'nvim_lsp' },
+            { name = 'luasnip' },
         },
         mapping = cmp.mapping.preset.insert({
-            ['<CR>'] = cmp.mapping.confirm({select = false}),
+            ['<CR>'] = cmp.mapping.confirm({ select = false }),
             ['<M-Space>'] = cmp.mapping.complete(),
-            ["<Tab>"] = cmp.mapping(function(fallback)
+            ['<Tab>'] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
                 elseif luasnip.expand_or_locally_jumpable() then
@@ -52,9 +52,9 @@ function plugins.config()
                 else
                     fallback()
                 end
-            end, { "i", "s" }),
+            end, { 'i', 's' }),
 
-            ["<S-Tab>"] = cmp.mapping(function(fallback)
+            ['<S-Tab>'] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_prev_item()
                 elseif luasnip.jumpable(-1) then
@@ -62,7 +62,7 @@ function plugins.config()
                 else
                     fallback()
                 end
-            end, { "i", "s" }),
+            end, { 'i', 's' }),
         }),
         snippet = {
             expand = function(args)
