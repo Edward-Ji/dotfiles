@@ -10,7 +10,7 @@ setopt PROMPT_SUBST
 PROMPT='%B%3~%b '
 
 # Conda integration
-PROMPT+='${CONDA_DEFAULT_ENV:+" $CONDA_DEFAULT_ENV "}'
+PROMPT+='${CONDA_DEFAULT_ENV:+"󰌠 $CONDA_DEFAULT_ENV "}'
 
 # Jenv integration
 precmd_jenv_info() {
@@ -22,7 +22,7 @@ precmd_jenv_info() {
     fi
 }
 precmd_functions+=( precmd_jenv_info )
-PROMPT+='${jenv_info:+" $jenv_info "}'
+PROMPT+='${jenv_info:+"󰬷 $jenv_info "}'
 
 # Git integration
 zstyle ':vcs_info:git*' formats '%b'
@@ -35,10 +35,10 @@ precmd_vcs_info() {
     fi
 }
 precmd_functions+=( precmd_vcs_info )
-PROMPT+='${vcs_info_msg_0_:+" $vcs_info_msg_0_ "}'
+PROMPT+='${vcs_info_msg_0_:+" $vcs_info_msg_0_ "}'
 
 # Exit code and superuser integration
-PROMPT+='%(?.%F{green}.%F{red})❯%(!.❯.)%f '
+PROMPT+='%(?.%F{green}.%F{red})󰅂%(!.󰅂.)%f '
 
 ################
 # Right Prompt #
