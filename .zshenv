@@ -6,4 +6,4 @@ export VISUAL=nvim
 [[ -r "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 # quarto generated
-export PATH="/Users/eji/Applications/quarto/bin:$PATH"
+export PATH="$HOME/Applications/quarto/bin:$PATH"
