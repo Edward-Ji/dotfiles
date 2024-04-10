@@ -9,8 +9,17 @@ setopt PROMPT_SUBST
 # Working directory
 PROMPT='%B%3~%b '
 
-# Conda integration
-PROMPT+='${CONDA_DEFAULT_ENV:+"󰌠 $CONDA_DEFAULT_ENV "}'
+# pyenv integration
+precmd_pyenv_info() {
+    if (( $+commands[pyenv] )); then
+        pyenv_info="$(pyenv version-name)"
+        if [[ "${pyenv_info}" = system ]]; then
+            pyenv_info=
+        fi
+    fi
+}
+precmd_functions+=( precmd_pyenv_info )
+PROMPT+='${pyenv_info:+"󰌠 $pyenv_info "}'
 
 # Jenv integration
 precmd_jenv_info() {
