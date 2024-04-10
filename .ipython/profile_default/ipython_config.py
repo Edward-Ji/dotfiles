@@ -1,13 +1,19 @@
 c = get_config()  # type: ignore
 
-## Automatically set the terminal title
-#  Default: True
+# Do not display a banner upon starting IPython
+c.TerminalIPythonApp.display_banner = False
+
+# No new line at the start of the prompt
+c.InteractiveShell.separate_in = ''
+
+# Do not automatically set the terminal title
 c.TerminalInteractiveShell.term_title = False
 
-## Use vi for editing
+# Use vi for editing
 c.TerminalInteractiveShell.editing_mode = 'vi'
 c.TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode = False
 c.TerminalInteractiveShell.timeoutlen = 0.25
 
-## Use 24bit colors instead of 256 colors in prompt highlighting.
+# Change color scheme
 c.TerminalInteractiveShell.true_color = True
+c.TerminalInteractiveShell.highlighting_style = "catppuccin-mocha"
