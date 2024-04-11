@@ -27,11 +27,9 @@ RUN cd dotfiles \
 &&  stow --adopt */ \
 &&  git restore */
 
-RUN mkdir -p ~/miniconda3 \
-&&  curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-`arch`.sh \
-    --output ~/miniconda3/miniconda.sh \
-&&  bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 \
-&&  rm -rf ~/miniconda3/miniconda.sh
+# Install pyenv
+RUN git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
+&&  sudo ln -s ~/.pyenv/bin/pyenv /usr/local/bin
 
 # Install zoxide - a smarter cd command
 RUN curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh \
