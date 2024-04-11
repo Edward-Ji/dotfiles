@@ -1,8 +1,5 @@
-####################
-# Load ZSH Plugins #
-####################
-for zsh_file in $HOME/.zsh/*.zsh
-do
+# Source zsh scripts
+for zsh_file in ~/.zsh/*.zsh; do
     source $zsh_file
 done
 
@@ -20,10 +17,3 @@ zstyle :compinstall filename "${HOME}/.zshrc"
 
 autoload -Uz compinit
 compinit
-
-bindkey -v
-bindkey '^R' history-incremental-search-backward 
-bindkey '^S' history-incremental-search-forward
-
-# Enable interactive comments
-setopt INTERACTIVE_COMMENTS
