@@ -22,8 +22,9 @@ stow */
 > Please be aware that not all features will work in the Docker container.
 
 You can run the following command to try with Docker:
+
 ```
-docker run --pull=always --rm -it edwardji/dotfiles:latest
+docker run --rm -it edwardji/dotfiles:latest
 ```
 
 [dockerhub]: https://hub.docker.com/r/edwardji/dotfiles
