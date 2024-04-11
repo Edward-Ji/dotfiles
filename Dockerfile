@@ -4,6 +4,7 @@ FROM ubuntu:latest
 RUN apt-get update \
 &&  apt-get install -y \
     git \
+    stow \
     sudo \
     tmux \
     zsh \
@@ -22,10 +23,10 @@ WORKDIR /home/admin
 
 # Sync dotfiles
 COPY --chown=admin . dotfiles
-RUN yes | dotfiles/dotsync -i \
-&&  rm -r dotfiles
+RUN cd dotfiles \
+&&  stow --adopt */ \
+&&  git restore */
 
-# Install miniconda
 RUN mkdir -p ~/miniconda3 \
 &&  curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-`arch`.sh \
     --output ~/miniconda3/miniconda.sh \
