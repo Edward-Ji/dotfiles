@@ -12,6 +12,16 @@ You can run the following command to install everything:
 stow */
 ```
 
+If there's any conflict, run the following command instead:
+
+```
+stow --adopt */ && git restore */
+```
+
+> [!WARNING]
+>
+> The above command will overwrite your existing configurations.
+
 ### Try with Docker
 
 [![Docker Image Version](https://img.shields.io/docker/v/edwardji/dotfiles?style=flat-square&logo=docker)][dockerhub]
