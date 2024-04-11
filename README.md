@@ -1,24 +1,15 @@
 # Dotfiles
 
-This repository contains a backup of all my personal configurations, as well as
-an installation script.
+My user-specific application configuration.
 
 ## Installation
 
-### Dotsync
+### Stow
 
-> [!CAUTION]
-> The ./dotsync script will overwrite your existing configurations. If you wish
-> to preserve them, you need to back them up manually.
+You can run the following command to install everything:
 
-To install the repository's dotfiles to your machine, use the following command:
 ```
-./dotsync -i
-```
-
-For more information on the script and available options, use this command:
-```
-./dotsync -h
+stow */
 ```
 
 ### Try with Docker
