@@ -7,7 +7,7 @@ do
 done
 
 # Define functions for autoloading
-fpath=('~/.zfunc' $fpath)
+fpath=(~/.zfunc $fpath)
 
 # homebrew auto-complete
 if type brew &>/dev/null; then
