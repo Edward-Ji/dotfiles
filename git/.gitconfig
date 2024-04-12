@@ -1,44 +1,22 @@
 [core]
-	autocrlf = input
 	quotePath = false
 [alias]
-	praise = blame
-	a = ! git add . && git status
-	aa = ! git add . && git add -u . && git status
-	ac = ! git add . && git commit
-	acm = ! git add . && git commit -m
-	alias = ! git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\  => \\2/' | sort
-	au = ! git add -u . && git status
 	c = commit
 	ca = commit --amend
 	cm = commit -m
 	co = checkout
 	d = diff
 	ds = diff --staged
-	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
-	last = log -1 HEAD
-	lg = log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ll = log --stat --abbrev-commit
-	llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
+	l = log --graph --all --pretty=format:'%C(brightmagenta)%h%C(blue)%d%Creset %s %C(white)- %an, %ar%Creset'
+	last = log -1
 	main = checkout main
+	praise = blame
 	s = status
-	unstage = reset HEAD --
-[init]
-	defaultBranch = main
-[gpg]
-	program = gpg
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[commit]
-	gpgsign = true
-[push]
-	autoSetupRemote = true
-[pull]
-	rebase = true
 [fetch]
 	prune = true
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
 [include]
-	path = ~/.gitconfig-user
+	path = ~/.gitconfig.inc
