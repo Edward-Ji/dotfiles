@@ -34,6 +34,7 @@ RUN git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
 # Install zoxide - a smarter cd command
 RUN curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh \
     | bash
+ENV PATH /home/admin/.local/bin:$PATH
 
 # Install node.js using node version manager
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
