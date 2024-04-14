@@ -13,7 +13,13 @@ RUN apt-get update \
     gettext \
     cmake \
     unzip \
-    curl
+    curl \
+# Build dependencies for python
+    zlib1g-dev libssl-dev libbz2-dev libncurses-dev libffi-dev \
+    libreadline-dev libsqlite3-dev liblzma-dev \
+# Application dependencies
+    fzf \
+    ripgrep
 
 # Create a user with sudo privileges and set zsh as default shell
 RUN useradd --groups sudo --create-home --shell /bin/zsh admin \
