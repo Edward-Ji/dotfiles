@@ -21,12 +21,6 @@ RUN useradd --groups sudo --create-home --shell /bin/zsh admin \
 USER admin
 WORKDIR /home/admin
 
-# Sync dotfiles
-COPY --chown=admin . dotfiles
-RUN cd dotfiles \
-&&  stow --adopt */ \
-&&  git restore */
-
 # Install pyenv
 RUN git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
 &&  sudo ln -s ~/.pyenv/bin/pyenv /usr/local/bin
@@ -46,6 +40,12 @@ RUN git clone --depth 1 --branch stable https://github.com/neovim/neovim/ \
 &&  sudo make install \
 &&  cd .. \
 &&  rm -r neovim
+
+# Sync dotfiles
+COPY --chown=admin . dotfiles
+RUN cd dotfiles \
+&&  stow --adopt */ \
+&&  git restore */
 
 # Set neovim to minimal and install plugins
 ENV NVIM_MINIMAL 1
