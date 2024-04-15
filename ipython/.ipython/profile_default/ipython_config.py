@@ -1,3 +1,6 @@
+from pygments.styles import get_style_by_name
+from pygments.util import ClassNotFound
+
 c = get_config()  # type: ignore
 
 # Do not display a banner upon starting IPython
@@ -16,4 +19,9 @@ c.TerminalInteractiveShell.timeoutlen = 0.25
 
 # Change color scheme
 c.TerminalInteractiveShell.true_color = True
-c.TerminalInteractiveShell.highlighting_style = "catppuccin-mocha"
+try:
+    c.TerminalInteractiveShell.highlighting_style = get_style_by_name(
+        "catppuccin-mocha"
+    )
+except ClassNotFound:
+    pass
