@@ -12,6 +12,7 @@ return {
                 end,
             },
             rconsole_width = math.floor(vim.fn.winwidth(0) / 2),
+            active_window_warn = false,
         }
         require('r').setup(opts)
     end,
