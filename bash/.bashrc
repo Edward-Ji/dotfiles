@@ -1,3 +1,10 @@
+# Aliases
+alias ls='ls --color'
+alias la='ls -a'
+alias ll='ls -hl'
+alias lla='ls -hla'
+alias mkdir='mkdir -pv'
+alias grep='grep --color'
 
 # Prompt
 export PROMPT_COMMAND=precmd
