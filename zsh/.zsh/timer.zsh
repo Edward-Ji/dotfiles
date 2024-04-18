@@ -28,7 +28,7 @@ precmd_timer() {
         local -i days=$(( $elapsed / 60 / 60 / 24 ))
 
         # Display the execution time
-        printf "⌚︎"
+        printf "󱎫 "
         [[ $days -gt 0 ]] && printf "%dd " $days
         [[ $hours -gt 0 ]] && printf "%dh " $hours
         [[ $minutes -gt 0 ]] && printf "%dm " $minutes
