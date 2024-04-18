@@ -1,15 +1,13 @@
-# Suppress the lengthy deprecation message
-export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# Pre-process prompt
+# Prompt
 export PROMPT_COMMAND=precmd
-
 precmd() {
     # Get exit code
     local -i exit_code=$?
 
     # Working directory truncated to last three
-    local wd=$(echo ${PWD/${HOME}/'~'} | rev | cut -d / -f 1-3 | rev)
+    local wd
+    wd=$(echo "${PWD/${HOME}/'~'}" | rev | cut -d / -f 1-3 | rev)
 
     # Font styles
     local reset='\e[0m'
@@ -17,10 +15,6 @@ precmd() {
     # Colors
     local red='\e[0;31m'
     local green='\e[0;32m'
-    local gray='\e[0;37m'
-    # Cursor
-    local savecursor='\e7'
-    local restorecursor='\e8'
 
     PS1="\[${bold}\]${wd}\[${reset}\] "
 
@@ -30,12 +24,9 @@ precmd() {
     else
         PS1+="\[${green}\]\$\[${reset}\] "
     fi
-
-    rprompt="${USER:-$(whoami)}@${HOSTNAME:-$(hostname)}"
-    local offsetcursor="\e[$((${COLUMNS} - ${#rprompt}))G"
-    printf "${savecursor}${offsetcursor}${gray}${rprompt}${reset}${restorecursor}"
 }
 
+# History
 shopt -s histappend
 HISTSIZE=-1
 HISTFILESIZE=-1
