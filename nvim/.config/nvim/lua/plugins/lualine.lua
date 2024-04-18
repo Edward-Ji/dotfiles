@@ -26,7 +26,7 @@ return {
         sections = {
             lualine_a = { 'mode' },
             lualine_b = {
-                'branch',
+                { 'branch', icon = '' },
                 'diff',
                 'diagnostics',
             },
