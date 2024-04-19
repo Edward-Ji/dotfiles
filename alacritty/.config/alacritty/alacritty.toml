@@ -25,3 +25,4 @@ history = 100000
 option_as_alt = "OnlyLeft"
 startup_mode = "Maximized"
 padding = { x = 5, y = 3 }
+decorations_theme_variant = "Dark"
