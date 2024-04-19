@@ -15,3 +15,5 @@ alias -g NUL='&> /dev/null'
 alias -g OUTNUL='> /dev/null'
 alias -g ERRNUL='2> /dev/null'
 
+# eza is a fork of unmaintained exa
+alias exa='eza'
