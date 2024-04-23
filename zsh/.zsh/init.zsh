@@ -30,3 +30,6 @@ export NVM_DIR="$HOME/.nvm"
 if type zoxide &> /dev/null; then
     eval "$(zoxide init zsh)"
 fi
+
+# fzf is a general-purpose command-line fuzzy finder.
+FZF_ALT_C_COMMAND= type fzf &> /dev/null && eval "$(fzf --zsh)"
