@@ -2,7 +2,7 @@ return {
     'stevearc/conform.nvim',
     opts = {
         formatters_by_ft = {
-            lua = { 'luafmt' },
+            lua = { 'stylua' },
             python = { 'isort', 'black' },
             rust = { 'rustfmt' },
         },
