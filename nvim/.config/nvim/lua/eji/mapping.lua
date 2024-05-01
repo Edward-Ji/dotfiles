@@ -1,6 +1,9 @@
 -- Reset highlight search on escape
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR>')
 
+-- Select pasted text
+vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select pasted text' })
+
 -- Move line or selection up or down with proper indenting
 vim.keymap.set('n', '<M-k>', ':move .-2<CR>==', { desc = 'Move line up', silent = true })
 vim.keymap.set('n', '<M-j>', ':move .+1<CR>==', { desc = 'Move line down', silent = true })
