@@ -3,6 +3,16 @@
 # paths. Here, the hardcoded paths have been replaced. Checks have also been
 # inserted to verify if respective commands are installed.
 
+# homebrew is a package manager for macOS
+if [ "$(arch)" = "arm64" ]; then
+    BREW_PATH="/opt/homebrew/bin/brew"
+elif [ "$(arch)" = "x86_64" ]; then
+    BREW_PATH="/usr/local/bin/brew"
+fi
+if [[ -f $BREW_PATH && -x $BREW_PATH ]]; then
+    eval "$($BREW_PATH shellenv)"
+fi
+
 # pyenv is a version manager for python
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
