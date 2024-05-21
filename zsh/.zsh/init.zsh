@@ -38,3 +38,4 @@ fi
 
 # fzf is a general-purpose command-line fuzzy finder.
 command -v fzf &> /dev/null && eval "$(fzf --zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
