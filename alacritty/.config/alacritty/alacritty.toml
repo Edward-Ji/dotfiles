@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+import = ["~/.config/alacritty/catppuccin/catppuccin-latte.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -25,4 +25,3 @@ history = 100000
 option_as_alt = "OnlyLeft"
 startup_mode = "Maximized"
 padding = { x = 5, y = 3 }
-decorations_theme_variant = "Dark"

@@ -21,7 +21,7 @@ c.TerminalInteractiveShell.timeoutlen = 0.25
 c.TerminalInteractiveShell.true_color = True
 try:
     c.TerminalInteractiveShell.highlighting_style = get_style_by_name(
-        "catppuccin-mocha"
+        "catppuccin-latte"
     )
 except ClassNotFound:
     pass

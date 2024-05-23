@@ -5,7 +5,7 @@ return {
     priority = 1000,
     config = function()
         require('catppuccin').setup({
-            flavour = 'mocha',
+            flavour = 'latte',
             no_italic = true,
             integrations = {
                 cmp = true,
