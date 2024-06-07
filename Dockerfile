@@ -18,7 +18,6 @@ RUN apt-get update \
     zlib1g-dev libssl-dev libbz2-dev libncurses-dev libffi-dev \
     libreadline-dev libsqlite3-dev liblzma-dev \
 # Application dependencies
-    fzf \
     ripgrep
 
 # Create a user with sudo privileges and set zsh as default shell
@@ -47,6 +46,10 @@ RUN git clone --depth 1 --branch stable https://github.com/neovim/neovim/ \
 &&  sudo make install \
 &&  cd .. \
 &&  rm -r neovim
+
+# Install fzf using git
+RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
+&&  ~/.fzf/install --key-bindings --completion --no-update-rc
 
 # Sync dotfiles
 COPY --chown=admin . dotfiles
