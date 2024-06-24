@@ -7,3 +7,6 @@ export VISUAL=nvim
 
 # quarto generated
 export PATH="$HOME/Applications/quarto/bin:$PATH"
+
+# do not show any hints about changing brew behaviour with environment variables
+export HOMEBREW_NO_ENV_HINTS=1
