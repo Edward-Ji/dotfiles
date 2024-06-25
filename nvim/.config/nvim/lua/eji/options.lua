@@ -2,6 +2,8 @@ vim.opt.exrc = true
 
 vim.opt.guicursor = ''
 
+vim.opt.mousemodel = 'extend'
+
 vim.opt.termguicolors = true
 
 vim.opt.number = true
