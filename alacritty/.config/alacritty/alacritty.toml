@@ -13,7 +13,7 @@ style = "Regular"
 
 [bell]
 duration = 400
-color = "#585B70"
+color = "#5c5f77"
 
 [cursor]
 style.blinking = "Never"
