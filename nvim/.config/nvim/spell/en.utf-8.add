@@ -1,1 +1,13 @@
-dotfile/s
+SFX S Y 1
+SFX S 0 s .
+gitignore
+brewfile
+dockerfile
+alacritty
+conda
+ipython
+nvim
+readline
+tmux
+zsh
+dotfile/S
