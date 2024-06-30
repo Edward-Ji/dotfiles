@@ -1,5 +1,5 @@
-SFX S Y 1
-SFX S 0 s .
+0
+dotfiles
 gitignore
 brewfile
 dockerfile
@@ -10,4 +10,3 @@ nvim
 readline
 tmux
 zsh
-dotfile/S
