@@ -35,10 +35,3 @@ fi
 if type zoxide &> /dev/null; then
     eval "$(zoxide init zsh)"
 fi
-
-# fzf is a general-purpose command-line fuzzy finder.
-if command -v fzf &> /dev/null; then
-    source <(fzf --zsh)
-elif [ -f ~/.fzf.zsh ]; then
-    source ~/.fzf.zsh
-fi
