@@ -6,11 +6,6 @@ done
 # Define functions for autoloading
 fpath=(~/.zfunc $fpath)
 
-# homebrew auto-complete
-if type brew &>/dev/null; then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
-
 bindkey -v
 
 zstyle ':completion:*' completer _complete _ignored _approximate

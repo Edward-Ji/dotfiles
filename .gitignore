@@ -1,2 +1,2 @@
 *.spl
-zsh/.zsh/user.zsh
+zsh/**/*-user.zsh
