@@ -1,8 +1,10 @@
 -- Reset highlight search on escape
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR>')
 
--- Select pasted text
-vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select pasted text' })
+-- Yank text
+vim.keymap.set('n', '<Leader>y', '"+y', { desc = 'Yank text into clipboard' })
+vim.keymap.set('v', '<Leader>y', '"+y', { desc = 'Yank text into clipboard' })
+vim.keymap.set('n', 'gy', '`[v`]', { desc = 'Select the previously changed or yanked text.' })
 
 -- Move line or selection up or down with proper indenting
 vim.keymap.set('n', '<M-k>', ':move .-2<CR>==', { desc = 'Move line up', silent = true })
