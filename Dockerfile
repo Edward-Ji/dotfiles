@@ -58,11 +58,11 @@ RUN cd dotfiles \
 &&  git restore */
 
 # Set neovim to minimal and install plugins
-ENV NVIM_MINIMAL 1
+ENV NVIM_MINIMAL=1
 RUN nvim --headless "+Lazy! sync" +qa
 
 # Set locale for tmux to render nerd fonts properly
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 
 # Start with zsh
 CMD ["zsh"]
