@@ -1,55 +1,32 @@
-FROM ubuntu:latest
+FROM fedora:latest
 
 # Install packages
-RUN apt-get update \
-&&  apt-get install -y \
+RUN dnf install -y \
     git \
     stow \
-    sudo \
-    tmux \
     zsh \
-# Build dependencies for neovim
-    ninja-build \
-    gettext \
-    cmake \
-    unzip \
-    curl \
-# Build dependencies for python
-    zlib1g-dev libssl-dev libbz2-dev libncurses-dev libffi-dev \
-    libreadline-dev libsqlite3-dev liblzma-dev \
-# Application dependencies
-    ripgrep
+    tmux \
+    fzf \
+    neovim \
+    zoxide \
+    nodejs \
+    ripgrep \
+    fd-find \
+# Suggested build environment for pyenv
+# https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+    make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqlite \
+    sqlite-devel openssl-devel tk-devel libffi-devel xz-devel libuuid-devel \
+    gdbm-libs libnsl2 \
+&&  dnf clean all
 
-# Create a user with sudo privileges and set zsh as default shell
-RUN useradd --groups sudo --create-home --shell /bin/zsh admin \
-&&  echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+# Create a user with administrative privileges and zsh as default shell
+RUN useradd --groups wheel --create-home --shell /bin/zsh admin \
+&&  echo "%wheel ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER admin
 WORKDIR /home/admin
 
 # Install pyenv
-RUN git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
-&&  sudo ln -s ~/.pyenv/bin/pyenv /usr/local/bin
-
-# Install zoxide - a smarter cd command
-RUN curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh \
-    | bash
-ENV PATH /home/admin/.local/bin:$PATH
-
-# Install node.js using node version manager
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
-    | bash
-
-# Build neovim from source
-RUN git clone --depth 1 --branch stable https://github.com/neovim/neovim/ \
-&&  cd neovim \
-&&  make CMAKE_BUILD_TYPE=Release \
-&&  sudo make install \
-&&  cd .. \
-&&  rm -r neovim
-
-# Install fzf using git
-RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
-&&  ~/.fzf/install --key-bindings --completion --no-update-rc
+RUN curl https://pyenv.run | bash
 
 # Sync dotfiles
 COPY --chown=admin . dotfiles
