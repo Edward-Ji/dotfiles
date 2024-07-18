@@ -12,15 +12,15 @@ You can run the following command to install everything:
 stow */
 ```
 
+> [!WARNING]
+>
+> The command below will overwrite your existing configurations.
+
 If there's any conflict, run the following command instead:
 
 ```
 stow --adopt */ && git restore */
 ```
-
-> [!WARNING]
->
-> The above command will overwrite your existing configurations.
 
 ### Try with Docker
 
