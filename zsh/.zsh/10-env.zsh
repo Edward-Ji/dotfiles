@@ -1,3 +1,6 @@
+# pipx is a tool to install and run python applications in isolated environments.
+export PATH="$HOME/.local/bin:$PATH"
+
 # pyenv is a version manager for python
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
