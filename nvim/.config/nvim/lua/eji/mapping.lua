@@ -21,7 +21,7 @@ end, { desc = 'Jump to buffer [count]', expr = true })
 vim.keymap.set('n', '<Leader>bd', '<Cmd>bdelete<CR>')
 
 -- Terminal
-vim.keymap.set('t', '<C-w>N', '<C-\\><C-n>')
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>')
 vim.keymap.set('t', '<C-w>h', '<Cmd>wincmd h<CR>')
 vim.keymap.set('t', '<C-w>j', '<Cmd>wincmd j<CR>')
 vim.keymap.set('t', '<C-w>k', '<Cmd>wincmd k<CR>')
