@@ -6,6 +6,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 if type pyenv &>/dev/null; then
     eval "$(pyenv init -)"
+    if [[ -d $PYENV_ROOT/plugins/virtualenv-init ]] \
+        || type pyenv-virtualenv-init &>/dev/null; then
+        eval "$(pyenv virtualenv-init -)"
+    fi
 fi
 
 # jenv is a version manager for java
