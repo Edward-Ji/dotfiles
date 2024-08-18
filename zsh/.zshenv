@@ -21,3 +21,6 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 # do not change the prompt when activating a python virtual environment
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# disable MacOS save/restore shell state feature
+export SHELL_SESSIONS_DISABLE=1
