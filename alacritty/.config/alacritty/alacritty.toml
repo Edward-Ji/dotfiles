@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/catppuccin/catppuccin-latte.toml"]
+import = ["~/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
 
 [font]
 size = 16.0
@@ -10,7 +10,7 @@ style = "Regular"
 
 [bell]
 duration = 400
-color = "#5c5f77"
+color = "#585b70"
 
 [cursor]
 style.blinking = "Never"
@@ -19,6 +19,7 @@ style.blinking = "Never"
 history = 100000
 
 [window]
+decorations_theme_variant = "Dark"
 option_as_alt = "OnlyLeft"
 startup_mode = "Maximized"
 padding = { x = 5, y = 3 }

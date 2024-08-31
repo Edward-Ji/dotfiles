@@ -1,12 +1,12 @@
 if (require("colorout", quietly = TRUE)) {
-    mauve <- "#8839ef"
-    red <- "#d20f39"
-    peach <- "#fe640b"
-    yellow <- "#df8e1d"
-    green <- "#40a02b"
-    teal <- "#179299"
-    text <- "#4c4f69"
-    surface1 <- "#bcc0cc"
+    mauve <- "#cba6f7"
+    red <- "#f38ba8"
+    peach <- "#fab387"
+    yellow <- "#f9e2af"
+    green <- "#a6e3a1"
+    teal <- "#94e2d5"
+    text <- "#cdd6f4"
+    surface1 <- "#45475a"
 
     true_color <- function(fg = "", bg = "", fo = "") {
         escape <- "\x1b["
