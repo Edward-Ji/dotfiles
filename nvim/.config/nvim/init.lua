@@ -13,4 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('eji')
 
-require('lazy').setup('plugins')
+require('lazy').setup({
+    spec = 'plugins',
+    checker = {
+        enabled = true,
+    }
+})
