@@ -26,3 +26,9 @@ vim.keymap.set('t', '<C-w>h', '<Cmd>wincmd h<CR>')
 vim.keymap.set('t', '<C-w>j', '<Cmd>wincmd j<CR>')
 vim.keymap.set('t', '<C-w>k', '<Cmd>wincmd k<CR>')
 vim.keymap.set('t', '<C-w>l', '<Cmd>wincmd l<CR>')
+
+-- Plugin and LSP managers
+vim.keymap.set('n', '<Leader>ll', '<Cmd>Lazy<CR>')
+vim.keymap.set('n', '<Leader>ls', '<Cmd>Lazy sync<CR>')
+vim.keymap.set('n', '<Leader>lp', '<Cmd>Lazy profile<CR>')
+vim.keymap.set('n', '<Leader>mm', '<Cmd>Mason<CR>')
