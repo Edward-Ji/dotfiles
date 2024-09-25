@@ -5,6 +5,9 @@ return {
         toggler = {
             block = '<NOP>',
         },
+        opleader = {
+            block = '<NOP>',
+        }
     },
     lazy = false,
 }
