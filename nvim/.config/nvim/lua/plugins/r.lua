@@ -17,4 +17,5 @@ return {
         require('r').setup(opts)
     end,
     lazy = false,
+    version = "~0.1.0"
 }
