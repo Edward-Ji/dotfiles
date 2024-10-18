@@ -9,5 +9,6 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} r:|[._-/]=** r:|=
 zstyle :compinstall filename "${HOME}/.zshrc"
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 
+fpath=(~/.zfunc $fpath)
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
