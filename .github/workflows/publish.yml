@@ -7,7 +7,7 @@ on:
       - "main"
     paths-ignore:
       - ".gitignore"
-      - ".nvim.lua"
+      - ".stylua.toml"
       - "Brewfile"
       - "LICENSE"
       - "README.md"
