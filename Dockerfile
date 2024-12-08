@@ -20,16 +20,20 @@ RUN dnf install -y \
 &&  dnf clean all
 
 # Create a user with administrative privileges and zsh as default shell
-RUN useradd --groups wheel --create-home --shell /bin/zsh admin \
+ARG name=admin
+ARG uid=1000
+ARG gid=1000
+RUN groupadd -g $gid $name
+RUN useradd -u $uid -g $gid -G wheel -m -s /bin/zsh $name \
 &&  echo "%wheel ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
-USER admin
-WORKDIR /home/admin
+USER $name
+WORKDIR /home/$name
 
 # Install pyenv
 RUN curl https://pyenv.run | bash
 
 # Sync dotfiles
-COPY --chown=admin . dotfiles
+COPY --chown=$name . dotfiles
 RUN cd dotfiles \
 &&  stow --adopt */ \
 &&  git restore */
