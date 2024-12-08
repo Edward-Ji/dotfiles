@@ -8,7 +8,9 @@ My user-specific application configuration.
 [![amd64 Docker Image Size](https://img.shields.io/docker/image-size/edwardji/dotfiles?arch=amd64&style=flat-square&logo=amd)][dockerhub]
 [![arm64 Docker Image Size](https://img.shields.io/docker/image-size/edwardji/dotfiles?arch=arm64&style=flat-square&logo=arm)][dockerhub]
 
-You can run the following command to try with Docker:
+To quickly test the configurations in a Docker environment, you can run the
+following command. This will pull the latest Docker image, start an interactive
+terminal session that will be removed when you exit.
 
 ```
 docker run --rm -it edwardji/dotfiles:latest
@@ -20,7 +22,8 @@ docker run --rm -it edwardji/dotfiles:latest
 
 ### Stow
 
-You can run the following command to install everything:
+To install all configurations at once, use the following command. This will
+create symlinks for all dotfiles in your home directory.
 
 ```
 stow */
@@ -28,9 +31,12 @@ stow */
 
 > [!WARNING]
 >
-> The command below will overwrite your existing configurations.
+> The command above will overwrite your existing configurations. Make sure you
+> have backups of any important files before proceeding.
 
-If there's any conflict, run the following command instead:
+If you encounter conflicts with existing configurations, you can use the
+following command to adopt the new configurations by replacing the current
+ones:
 
 ```
 stow --adopt */ && git restore */
@@ -38,8 +44,9 @@ stow --adopt */ && git restore */
 
 ### Docker
 
-You can run the following command to build an isolated and portable development
-environment:
+To create an isolated and portable development environment using Docker, run the
+following command. This builds a Docker image with your user information,
+ensuring that file ownerships are correctly set.
 
 ```
 docker build \
@@ -50,8 +57,9 @@ docker build \
     .
 ```
 
-Start a container and mount your working directory, allowing you to interact
-with host files seamlessly.
+Once the image is built, you can start a container and mount your current
+working directory. This allows you to interact with files on your host system
+seamlessly.
 
 ```
 docker run -it -e TERM=$TERM -v $(pwd):$(pwd) -w $(pwd) dotfiles
