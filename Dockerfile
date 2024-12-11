@@ -1,5 +1,10 @@
 FROM fedora:latest
 
+# Install documentation for packages
+RUN sed -i '/^tsflags=nodocs/d' /etc/dnf/dnf.conf \
+&&  dnf reinstall -y '*' \
+&&  dnf install -y man man-pages
+
 # Install packages
 RUN dnf install -y \
     git \
