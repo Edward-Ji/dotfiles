@@ -28,8 +28,10 @@ RUN dnf install -y \
 ARG name=admin
 ARG uid=1000
 ARG gid=1000
-RUN groupadd -g $gid $name
-RUN useradd -u $uid -g $gid -G wheel -m -s /bin/zsh $name \
+RUN groupadd --gid $gid --non-unique $name \
+&&  useradd --uid $uid --gid $gid --non-unique \
+    --create-home --shell /bin/zsh \
+    --groups wheel $name \
 &&  echo "%wheel ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER $name
 WORKDIR /home/$name
