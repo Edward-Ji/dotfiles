@@ -18,5 +18,5 @@ return {
             },
         })
     end,
-    enabled = os.getenv('NVIM_MINIMAL') == nil,
+    enabled = os.getenv('NO_ASKPASS') == nil,
 }

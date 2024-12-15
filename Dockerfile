@@ -39,8 +39,8 @@ RUN cd dotfiles \
 &&  stow --adopt */ \
 &&  git restore */
 
-# Set neovim to minimal and install plugins
-ENV NVIM_MINIMAL=1
+# Install neovim plugins that don't require user credentials
+RUN echo "export NO_ASKPASS=1" >> ~/.config/zsh/zshrc.d/90-user.zsh
 RUN nvim --headless "+Lazy! install" +qa
 
 # Set locale for tmux to render nerd fonts properly

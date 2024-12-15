@@ -3,7 +3,7 @@ return {
 
     {
         'wakatime/vim-wakatime',
-        enabled = os.getenv('NVIM_MINIMAL') == nil,
+        enabled = os.getenv('NO_ASKPASS') == nil,
     },
 
     {
