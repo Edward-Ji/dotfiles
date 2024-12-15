@@ -46,5 +46,7 @@ RUN nvim --headless "+Lazy! install" +qa
 # Set locale for tmux to render nerd fonts properly
 ENV LANG=C.UTF-8
 
-# Start with zsh
+# Set entry point and default command
+USER root
+ENTRYPOINT ["/home/admin/dotfiles/entrypoint.sh"]
 CMD ["zsh"]
