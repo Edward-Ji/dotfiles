@@ -44,7 +44,7 @@ RUN echo "export NO_ASKPASS=1" >> ~/.config/zsh/zshrc.d/90-user.zsh
 RUN nvim --headless "+Lazy! install" +qa
 
 # Set locale for tmux to render nerd fonts properly
-ENV LANG=C.UTF-8
+RUN echo "export LANG=C.UTF-8" >> ~/.config/zsh/zshrc.d/90-user.zsh
 
 # Set entry point and default command
 USER root
