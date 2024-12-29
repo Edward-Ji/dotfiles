@@ -31,7 +31,7 @@ stow */
 
 > [!WARNING]
 >
-> The command above will overwrite your existing configurations. Make sure you
+> The command below will overwrite your existing configurations. Make sure you
 > have backups of any important files before proceeding.
 
 If you encounter conflicts with existing configurations, you can use the
