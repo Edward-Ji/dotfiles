@@ -30,8 +30,8 @@ RUN useradd --groups wheel --create-home --shell /bin/zsh admin \
 USER admin
 WORKDIR /home/admin
 
-# Install pyenv
-RUN curl https://pyenv.run | bash
+# Install uv
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Sync dotfiles
 COPY --chown=admin . dotfiles
