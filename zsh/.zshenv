@@ -4,6 +4,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+# set PATH for user-installed programs
+export PATH="$HOME/.local/bin:$PATH"
+
 # set ZSH dotfiles directory
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 [[ -d "$XDG_STATE_HOME"/zsh ]] || mkdir -p "$XDG_STATE_HOME"/zsh
