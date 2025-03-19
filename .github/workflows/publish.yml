@@ -3,7 +3,7 @@ name: publish multi-platform image
 on:
   push:
     branches:
-      - "18-multi-platform-image"
+      - "main"
     paths-ignore:
       - ".gitignore"
       - ".stylua.toml"
@@ -12,7 +12,7 @@ on:
       - "README.md"
 
 env:
-  REGISTRY_IMAGE: edwardji/dotfiles-test
+  REGISTRY_IMAGE: edwardji/dotfiles
 
 jobs:
   build:
