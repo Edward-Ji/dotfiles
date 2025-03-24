@@ -1,5 +1,7 @@
 FROM fedora:latest
 
+LABEL maintainer="Edward Ji <me@edwardji.dev>"
+
 # Install documentation for packages
 RUN sed -i '/^tsflags=nodocs/d' /etc/dnf/dnf.conf \
 &&  dnf reinstall -y '*' \
