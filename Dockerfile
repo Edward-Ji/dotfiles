@@ -17,11 +17,6 @@ RUN dnf install -y \
     nodejs \
     ripgrep \
     fd-find \
-# Suggested build environment for pyenv
-# https://github.com/pyenv/pyenv/wiki#suggested-build-environment
-    make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqlite \
-    sqlite-devel openssl-devel tk-devel libffi-devel xz-devel libuuid-devel \
-    gdbm-libs libnsl2 \
 &&  dnf clean all
 
 # Create a user with administrative privileges and zsh as default shell
