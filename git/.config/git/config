@@ -1,29 +1,38 @@
-[core]
-	quotePath = false
+[user]
+    name = Edward Ji
+    email = jiziao6@gmail.com
+    signingkey = 9B6EEFBAD2E3DA86
+
 [alias]
-	c = commit
-	ca = commit --amend
-	cm = commit -m
-	co = checkout
-	d = diff
-	ds = diff --staged
-	l = log --graph --all --pretty=format:'%C(brightmagenta)%h%C(blue)%d%Creset %s %C(white)- %an, %ar%Creset'
-	last = log -1
-	main = checkout main
-	praise = blame
-	s = status
+    c = commit
+    ca = commit --amend
+    cm = commit -m
+    co = checkout
+    d = diff
+    ds = diff --staged
+    l = log --oneline --graph
+    s = status
+
+[commit]
+    gpgSign = true
+
 [fetch]
-	prune = true
+    prune = true
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
 [pull]
-	rebase = true
+    rebase = true
+
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
+
+[rebase]
+    autoStash = True
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[include]
-	path = ~/.gitconfig.inc
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
