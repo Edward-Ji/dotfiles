@@ -9,6 +9,7 @@ RUN sed -i '/^tsflags=nodocs/d' /etc/dnf/dnf.conf \
 
 # Install packages
 RUN dnf install -y \
+    gawk \
     git \
     stow \
     zsh \
