@@ -11,6 +11,10 @@ on:
       - "LICENSE"
       - "README.md"
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   REGISTRY_IMAGE: edwardji/dotfiles
 
