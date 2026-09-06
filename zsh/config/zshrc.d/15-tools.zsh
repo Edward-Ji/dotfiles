@@ -22,3 +22,15 @@ fi
 if type uvx &> /dev/null; then
     eval "$(uvx --generate-shell-completion zsh)"
 fi
+
+# lazygit is a simple terminal UI for git commands
+if type lazygit &> /dev/null; then
+    _lazygit_config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/lazygit"
+    _lazygit_config_files=(
+        "$_lazygit_config_dir/config.yml"
+        "$_lazygit_config_dir/theme.yml"
+        "$_lazygit_config_dir/config.local.yml"
+    )
+    export LG_CONFIG_FILE="${(j:,:)_lazygit_config_files}"
+    unset _lazygit_config_dir _lazygit_config_files
+fi

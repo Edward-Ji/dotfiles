@@ -3,6 +3,7 @@
 "~/.claude/statusline.sh" = "claude/statusline.sh"
 "~/.config/ghostty" = "ghostty"
 "~/.config/git" = "git"
+"~/.config/lazygit" = "lazygit"
 "~/.config/mise/config.toml" = "mise/config.toml"
 "~/.config/nvim" = "nvim"
 "~/.config/tmux" = "tmux"

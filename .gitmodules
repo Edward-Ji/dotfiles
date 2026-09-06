@@ -4,3 +4,6 @@
 [submodule "tmux/.config/tmux/plugins/catppuccin/tmux"]
 	path = tmux/plugins/catppuccin/tmux
 	url = ../../catppuccin/tmux.git
+[submodule "lazygit/catppuccin"]
+	path = lazygit/catppuccin
+	url = ../../catppuccin/lazygit.git
