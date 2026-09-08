@@ -82,7 +82,6 @@ return {
                         max_length = vim.o.columns,
                         filetype_names = {
                             snacks_picker_input = 'Snacks',
-                            fugitive = 'Fugitive',
                             mason = 'Mason',
                         },
                     },
