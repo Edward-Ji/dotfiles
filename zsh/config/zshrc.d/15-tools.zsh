@@ -29,8 +29,10 @@ if type lazygit &> /dev/null; then
     _lazygit_config_files=(
         "$_lazygit_config_dir/config.yml"
         "$_lazygit_config_dir/theme.yml"
-        "$_lazygit_config_dir/config.local.yml"
     )
+    if [[ -f "$_lazygit_config_dir/config.local.yml" ]]; then
+        _lazygit_config_files+=("$_lazygit_config_dir/config.local.yml")
+    fi
     export LG_CONFIG_FILE="${(j:,:)_lazygit_config_files}"
     unset _lazygit_config_dir _lazygit_config_files
 fi
