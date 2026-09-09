@@ -6,6 +6,8 @@ vim.opt.mousemodel = 'extend'
 
 vim.opt.termguicolors = true
 
+vim.o.winborder = 'rounded'
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
