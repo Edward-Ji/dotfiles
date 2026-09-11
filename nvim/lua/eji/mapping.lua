@@ -4,7 +4,6 @@ vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR>')
 -- Yank text
 vim.keymap.set('n', '<Leader>y', '"+y', { desc = 'Yank text into clipboard' })
 vim.keymap.set('v', '<Leader>y', '"+y', { desc = 'Yank text into clipboard' })
-vim.keymap.set('n', 'gy', '`[v`]', { desc = 'Select the previously changed or yanked text.' })
 
 -- Move line or selection up or down with proper indenting
 vim.keymap.set('n', '<M-k>', ':move .-2<CR>==', { desc = 'Move line up', silent = true })
@@ -17,6 +16,10 @@ vim.keymap.set('t', '<C-W>h', '<Cmd>wincmd h<CR>')
 vim.keymap.set('t', '<C-W>j', '<Cmd>wincmd j<CR>')
 vim.keymap.set('t', '<C-W>k', '<Cmd>wincmd k<CR>')
 vim.keymap.set('t', '<C-W>l', '<Cmd>wincmd l<CR>')
+
+-- LSP
+vim.keymap.set('n', '<Leader>ca', function() vim.lsp.buf.code_action() end, { desc = 'Code action' })
+vim.keymap.set('n', '<Leader>cr', function() vim.lsp.buf.rename() end, { desc = 'Rename symbol' })
 
 -- Plugin and LSP managers
 vim.keymap.set('n', '<Leader>pu', function()

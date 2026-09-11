@@ -72,14 +72,11 @@ return {
         vim.keymap.set('n', '<Leader>uC', function() Snacks.picker.colorschemes() end, { desc = 'Snacks colorschemes' })
 
         -- LSP
-        -- `gr` is left unmapped: it would be a prefix of Neovim's own default
-        -- gr*-prefixed LSP keymaps (grr, gra, gri, grn), so Neovim would wait
-        -- out timeoutlen on every gr* keymap to see if more input is coming.
-        -- `gy` is left unmapped: it already selects the last changed or
-        -- yanked text (see eji/mapping.lua).
+        vim.keymap.set('n', 'gr', function() Snacks.picker.lsp_references() end, { nowait = true, desc = 'References' })
         vim.keymap.set('n', 'gd', function() Snacks.picker.lsp_definitions() end, { desc = 'Goto definition' })
         vim.keymap.set('n', 'gD', function() Snacks.picker.lsp_declarations() end, { desc = 'Goto declaration' })
         vim.keymap.set('n', 'gI', function() Snacks.picker.lsp_implementations() end, { desc = 'Goto implementation' })
+        vim.keymap.set('n', 'gy', function() Snacks.picker.lsp_type_definitions() end, { desc = 'Goto type definition' })
         vim.keymap.set('n', 'gai', function() Snacks.picker.lsp_incoming_calls() end, { desc = 'Calls incoming' })
         vim.keymap.set('n', 'gao', function() Snacks.picker.lsp_outgoing_calls() end, { desc = 'Calls outgoing' })
         vim.keymap.set('n', '<Leader>ss', function() Snacks.picker.lsp_symbols() end, { desc = 'Snacks document symbols' })
